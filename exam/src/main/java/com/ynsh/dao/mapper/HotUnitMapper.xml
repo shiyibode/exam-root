@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ynsh.dao.HotUnitDao">
+
+    <sql id="columns">
+        b.id AS id,
+        b.name AS name,
+        b.cover_image AS cover_image,
+        b.zaned_times AS zaned_times,
+        b.focused_times AS focused_times
+    </sql>
+
+    <select id="getTop3HotPerson" resultType="com.ynsh.model.Unit">
+        SELECT
+        <include refid="columns"/>
+        FROM t_hot_unit a
+        LEFT JOIN t_unit b ON a.unit_id = b.id
+        WHERE a.available = TRUE AND a.del_flag = FALSE AND b.type=#{UNIT_TYPE_PERSON}
+        ORDER BY a.sort ASC
+        LIMIT 3
+    </select>
+
+    <select id="getTop3HotShop" resultType="com.ynsh.model.Unit">
+        SELECT
+        <include refid="columns"/>
+        FROM t_hot_unit a
+        LEFT JOIN t_unit b ON a.unit_id = b.id
+        WHERE a.available = TRUE AND a.del_flag = FALSE AND (b.type=#{UNIT_TYPE_SHOP} OR b.type=#{UNIT_TYPE_COMPANY} OR b.type=#{UNIT_TYPE_XINGZHENG} OR b.type=#{UNIT_TYPE_SHIYE})
+        ORDER BY a.sort ASC
+        LIMIT 3
+    </select>
+
+    <select id="getTop3RecentOnline" resultType="com.ynsh.model.Unit">
+        SELECT
+        <include refid="columns"/>
+        FROM t_recent_online_unit a
+        LEFT JOIN t_unit b ON a.unit_id = b.id
+        WHERE a.available = TRUE AND a.del_flag = FALSE
+        ORDER BY a.create_time DESC,a.sort ASC
+        LIMIT 3
+    </select>
+    
+    <select id="getMoreHotPerson" parameterType="com.ynsh.model.Unit" resultType="com.ynsh.model.Unit">
+        SELECT
+        <include refid="columns"/>
+        FROM t_hot_unit a
+        LEFT JOIN t_unit b ON a.unit_id = b.id
+        WHERE a.available = TRUE AND a.del_flag = FALSE AND b.type=#{UNIT_TYPE_PERSON} AND b.available = TRUE AND b.del_flag = FALSE
+        <if test="page != null and page.pageFlag == true">
+            LIMIT #{page.offset},#{page.pageSize}
+        </if>
+    </select>
+
+    <select id="getMoreHotShop" parameterType="com.ynsh.model.Unit" resultType="com.ynsh.model.Unit">
+        SELECT
+        <include refid="columns"/>
+        FROM t_hot_unit a
+        LEFT JOIN t_unit b ON a.unit_id = b.id
+        WHERE a.available = TRUE AND a.del_flag = FALSE AND (b.type=#{UNIT_TYPE_SHOP} OR b.type=#{UNIT_TYPE_COMPANY} OR b.type=#{UNIT_TYPE_XINGZHENG} OR b.type=#{UNIT_TYPE_SHIYE}) AND b.available = TRUE AND b.del_flag = FALSE
+        <if test="page != null and page.pageFlag == true">
+            LIMIT #{page.offset},#{page.pageSize}
+        </if>
+    </select>
+
+    <select id="getMoreRecentOnline" resultType="com.ynsh.model.Unit">
+        SELECT
+        <include refid="columns"/>
+        FROM t_recent_online_unit a
+        LEFT JOIN t_unit b ON a.unit_id = b.id
+        WHERE a.available = TRUE AND a.del_flag = FALSE
+        ORDER BY a.create_time DESC,a.sort ASC
+        <if test="page != null and page.pageFlag == true">
+            LIMIT #{page.offset},#{page.pageSize}
+        </if>
+    </select>
+    
+    <select id="getSearchResultList" parameterType="com.ynsh.model.SearchUtil" resultType="com.ynsh.model.Unit">
+        SELECT id, name, cover_image, zaned_times,focused_times
+        FROM t_unit
+        WHERE available = TRUE AND del_flag = FALSE AND (string_tags LIKE CONCAT('%',#{key},'%') OR name LIKE CONCAT('%',#{key},'%'))
+        ORDER BY create_time DESC
+        <if test="page != null and page.pageFlag == true">
+            LIMIT #{page.offset},#{page.pageSize}
+        </if>
+    </select>
+
+</mapper>

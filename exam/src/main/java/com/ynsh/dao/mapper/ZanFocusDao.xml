@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynsh.dao.ZanFocusDao">
+    <!--<cache type="org.mybatis.caches.ehcache.EhcacheCache" />-->
+    <!--<cache></cache>-->
+
+    <select id="getZanedUnit" parameterType="com.ynsh.model.ZanedUnit" resultType="com.ynsh.model.ZanedUnit">
+        SELECT open_id,unit_id,del_flag
+        FROM t_client_zaned_unit
+        WHERE open_id = #{openId} AND unit_id = #{unitId}
+    </select>
+
+    <select id="getFocusedUnit" parameterType="com.ynsh.model.FocusedUnit" resultType="com.ynsh.model.FocusedUnit">
+        SELECT open_id,unit_id,del_flag
+        FROM t_client_focused_unit
+        WHERE open_id = #{openId} AND unit_id = #{unitId}
+    </select>
+
+    <insert id="zanUnit" parameterType="com.ynsh.model.ZanedUnit">
+        INSERT INTO t_client_zaned_unit
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="openId != null">
+                open_id,
+            </if>
+            <if test="unitId != null">
+                unit_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="openId != null">
+                #{openId},
+            </if>
+            <if test="unitId != null">
+                #{unitId},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="reZanUnit">
+        UPDATE t_client_zaned_unit
+        SET del_flag = FALSE
+        WHERE unit_id = #{unitId} AND open_id = #{openId} AND del_flag = TRUE
+    </update>
+
+    <update id="deleteZanUnit">
+        UPDATE t_client_zaned_unit
+        SET del_flag = TRUE
+        WHERE unit_id = #{unitId} AND open_id = #{openId}
+    </update>
+
+    <insert id="focusUnit" parameterType="com.ynsh.model.FocusedUnit">
+        INSERT INTO t_client_focused_unit
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="openId != null">
+                open_id,
+            </if>
+            <if test="unitId != null">
+                unit_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="openId != null">
+                #{openId},
+            </if>
+            <if test="unitId != null">
+                #{unitId},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="reFocusUnit">
+        UPDATE t_client_focused_unit
+        SET del_flag = FALSE
+        WHERE unit_id = #{unitId} AND open_id = #{openId} AND del_flag = TRUE
+    </update>
+
+    <update id="deleteFocusUnit">
+        UPDATE t_client_focused_unit
+        SET del_flag = TRUE
+        WHERE unit_id = #{unitId} AND open_id = #{openId}
+    </update>
+
+    <sql id="listColumns">
+        b.id AS id,
+        b.name AS name,
+        b.title AS title,
+        b.string_tags AS string_tags,
+        b.service_area AS service_area,
+        b.main_phone_number AS main_phone_number
+    </sql>
+
+    <select id="getSingleClientZanedUnits" parameterType="com.ynsh.model.Client" resultType="com.ynsh.model.Unit">
+        SELECT
+        <include refid="listColumns"/>
+        FROM t_client_zaned_unit a
+        LEFT JOIN t_unit b ON a.unit_id = b.id
+        WHERE a.open_id = #{openId} AND a.del_flag = FALSE AND b.del_flag = FALSE AND b.available = TRUE
+        <if test="page != null and page.pageFlag == true">
+            LIMIT #{page.offset},#{page.pageSize}
+        </if>
+    </select>
+
+    <select id="getSingleClientFocusedUnits" parameterType="com.ynsh.model.Client" resultType="com.ynsh.model.Unit">
+        SELECT
+        <include refid="listColumns"/>
+        FROM t_client_focused_unit a
+        LEFT JOIN t_unit b ON a.unit_id = b.id
+        WHERE a.open_id = #{openId} AND a.del_flag = FALSE AND b.del_flag = FALSE AND b.available = TRUE
+        <if test="page != null and page.pageFlag == true">
+            LIMIT #{page.offset},#{page.pageSize}
+        </if>
+    </select>
+
+    <update id="addZanedTimes" parameterType="com.ynsh.model.ZanedUnit">
+        UPDATE t_unit
+        SET zaned_times = zaned_times + 1
+        WHERE id = #{unitId}
+    </update>
+
+    <update id="reduceZanedTimes" parameterType="com.ynsh.model.ZanedUnit">
+        UPDATE t_unit
+        SET zaned_times = CASE WHEN zaned_times = 0 THEN 0 ELSE zaned_times-1 END
+        WHERE id = #{unitId}
+    </update>
+
+    <update id="addFocusedTimes" parameterType="com.ynsh.model.FocusedUnit">
+        UPDATE t_unit
+        SET focused_times = focused_times + 1
+        WHERE id = #{unitId}
+    </update>
+
+    <update id="reduceFocusedTimes" parameterType="com.ynsh.model.FocusedUnit">
+        UPDATE t_unit
+        SET focused_times = CASE WHEN focused_times = 0 THEN 0 ELSE focused_times-1 END
+        WHERE id = #{unitId}
+    </update>
+
+</mapper>

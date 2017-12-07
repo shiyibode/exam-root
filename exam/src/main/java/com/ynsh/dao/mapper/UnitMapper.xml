@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ynsh.dao.UnitDao">
+
+    <resultMap id="UnitResultMap" type="com.ynsh.model.Unit">
+        <id property="id" column="a_id"/>
+        <result property="title" column="a_title"/>
+        <result property="name" column="a_name"/>
+        <result property="identityType" column="a_identity_type"/>
+        <result property="identityNumber" column="a_identity_number"/>
+        <result property="coverImage" column="a_cover_image"/>
+        <result property="birthPlace" column="a_birth_place"/>
+        <result property="authenticationStatus" column="a_authentication_status"/>
+        <result property="serviceYears" column="a_service_years"/>
+        <result property="serviceArea" column="a_service_area"/>
+        <result property="mainPhoneNumber" column="a_main_phone_number"/>
+        <result property="registTime" column="a_regist_time"/>
+        <result property="serviceContentText" column="a_service_content_text"/>
+        <result property="serviceContentVideo" column="a_service_content_video"/>
+        <result property="serviceContentVideoPoster" column="a_service_content_video_poster"/>
+        <result property="introduction" column="a_introduction"/>
+        <result property="haveIntroduction" column="a_have_introduction"/>
+        <result property="stringTags" column="a_string_tags"/>
+        <result property="lookOverTimes" column="a_look_over_times"/>
+        <result property="focusedTimes" column="a_focused_times"/>
+        <result property="zanedTimes" column="a_zaned_times"/>
+        <result property="haveAddress" column="a_have_address"/>
+        <result property="location.id" column="c_id"/>
+        <result property="location.unitId" column="c_unit_id"/>
+        <result property="location.address" column="c_address"/>
+        <result property="location.longitude" column="c_longitude"/>
+        <result property="location.latitude" column="c_latitude"/>
+        <result property="location.scale" column="c_scale"/>
+        <result property="available" column="a_available"/>
+        <result property="createTime" column="a_create_time"/>
+        <result property="createBy" column="a_create_by"/>
+        <result property="updateTime" column="a_update_time"/>
+        <result property="updateBy" column="a_update_by"/>
+        <result property="delFlag" column="a_del_flag"/>
+        <collection property="location.markers" ofType="com.ynsh.model.Marker">
+            <id property="id" column="e_id"/>
+            <result property="locationId" column="e_location_id"/>
+            <result property="iconPath" column="e_icon_path"/>
+            <result property="longitude" column="e_longitude"/>
+            <result property="latitude" column="e_latitude"/>
+            <result property="width" column="e_longitude"/>
+            <result property="height" column="e_longitude"/>
+        </collection>
+        <collection property="contactInfo" ofType="com.ynsh.model.ContactInfo">
+            <id property="id" column="b_id"/>
+            <result property="type" column="b_type"/>
+            <result property="isPhoneNumber" column="b_is_phone_number"/>
+            <result property="isQQNumber" column="b_is_QQ_number"/>
+            <result property="isWeChatNumber" column="b_is_we_chat_number"/>
+            <result property="value" column="b_value"/>
+            <result property="icon" column="b_icon"/>
+            <result property="createTime" column="b_create_time"/>
+            <result property="createBy" column="b_create_by"/>
+            <result property="updateTime" column="b_update_time"/>
+            <result property="updateBy" column="b_update_by"/>
+            <result property="delFlag" column="b_del_flag"/>
+        </collection>
+        <collection property="serviceRelated" ofType="com.ynsh.model.Image">
+            <id property="id" column="g_id"/>
+            <result property="description" column="g_description"/>
+            <result property="imagePath" column="g_image_path"/>
+            <result property="width" column="g_width"/>
+            <result property="height" column="g_height"/>
+        </collection>
+    </resultMap>
+
+    <sql id="columns">
+        a.id AS a_id,
+        a.title AS a_title,
+        a.name AS a_name,
+        a.identity_type AS a_identity_type,
+        a.identity_number AS a_identity_number,
+        a.cover_image AS a_cover_image,
+        a.birth_place AS a_birth_place,
+        a.authentication_status AS a_authentication_status,
+        a.service_years AS a_service_years,
+        a.service_area AS a_service_area,
+        a.main_phone_number AS a_main_phone_number,
+        a.regist_time AS a_regist_time,
+        a.service_content_text AS a_service_content_text,
+        a.service_content_video AS a_service_content_video,
+        a.service_content_video_poster AS a_service_content_video_poster,
+        a.introduction AS a_introduction,
+        a.have_introduction AS a_have_introduction,
+        a.string_tags AS a_string_tags,
+        a.look_over_times AS a_look_over_times,
+        a.focused_times AS a_focused_times,
+        a.zaned_times AS a_zaned_times,
+        a.have_address AS a_have_address,
+        c.id AS c_id,
+        c.unit_id AS c_unit_id,
+        c.address AS c_address,
+        c.longitude AS c_longitude,
+        c.latitude AS c_latitude,
+        c.scale AS c_scale,
+        a.available AS a_available,
+        a.create_by AS a_create_by,
+        a.create_time AS a_create_time,
+        a.update_by AS a_update_by,
+        a.update_time AS a_update_time,
+        a.del_flag AS a_del_flag,
+        b.id AS b_id,
+        b.type AS b_type,
+        b.is_phone_number AS b_is_phone_number,
+        b.is_QQ_number AS b_is_QQ_number,
+        b.is_we_chat_number AS b_is_we_chat_number,
+        b.value AS b_value,
+        b.icon AS b_icon,
+        b.create_time AS b_create_time,
+        b.create_by AS b_create_by,
+        b.update_by AS b_update_by,
+        b.update_time AS b_update_time,
+        b.del_flag AS b_del_flag,
+        e.id AS e_id,
+        e.location_id AS e_location_id,
+        e.icon_path AS e_icon_path,
+        e.longitude AS e_longitude,
+        e.latitude AS e_latitude,
+        e.width AS e_width,
+        e.height AS e_height,
+        g.id AS g_id,
+        g.description AS g_description,
+        g.image_path AS g_image_path,
+        g.width AS g_width,
+        g.height AS g_height
+    </sql>
+
+    <select id="selectById" resultMap="UnitResultMap" parameterType="java.lang.Long">
+        SELECT
+        <include refid="columns"/>
+        FROM t_unit a
+        LEFT JOIN t_unit_contact_info d ON a.id = d.unit_id
+        LEFT JOIN t_contact_info b ON d.contact_info_id = b.id
+        LEFT JOIN t_location c ON c.unit_id = a.id
+        LEFT JOIN t_marker e on c.id = e.location_id
+        LEFT JOIN t_unit_related_image g ON g.unit_id = a.id
+        WHERE a.id = #{id,jdbcType=BIGINT}
+              AND a.del_flag = FALSE
+    </select>
+
+    <sql id="listColumns">
+        b.id AS id,
+        b.name AS name,
+        b.title AS title,
+        b.string_tags AS string_tags,
+        b.service_area AS service_area,
+        b.main_phone_number AS main_phone_number
+    </sql>
+
+    <select id="getMainPageGroupItemUnitsList" parameterType="com.ynsh.model.MainPageGroupItem"  resultType="com.ynsh.model.Unit">
+      SELECT
+      <include refid="listColumns"/>
+      FROM t_main_page_group_item_unit a
+      LEFT JOIN t_unit b ON a.unit_id = b.id WHERE a.main_page_group_item_id = #{id} AND a.del_flag = FALSE
+    </select>
+
+</mapper>

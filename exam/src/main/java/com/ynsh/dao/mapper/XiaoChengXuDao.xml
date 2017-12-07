@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynsh.dao.XiaoChengXuDao">
+    <!--<cache type="org.mybatis.caches.ehcache.EhcacheCache" />-->
+    <!--<cache></cache>-->
+
+    <sql id="mainPageGroupColumns">
+        a.id,
+        a.text,
+        a.icon,
+        a.available,
+        a.create_by,
+        a.create_time
+    </sql>
+
+    <sql id="mainPageGroupItemColumns">
+        a.id,
+        a.group_id,
+        a.text,
+        a.text_describe,
+        a.icon,
+        a.route,
+        a.available,
+        a.create_by,
+        a.create_time
+    </sql>
+
+    <select id="getMainPageGroups" resultType="com.ynsh.model.MainPageGroup">
+        SELECT
+        <include refid="mainPageGroupColumns"/>
+        FROM t_main_page_group a
+        WHERE a.available = TRUE
+    </select>
+
+    <select id="getItemsByGroupId" resultType="com.ynsh.model.MainPageGroupItem">
+        SELECT
+        <include refid="mainPageGroupItemColumns"/>
+        FROM t_main_page_group_item a
+        WHERE a.available = TRUE AND group_id = #{id}
+    </select>
+
+    <select id="getZanedClient" parameterType="com.ynsh.model.ZanedUnit" resultType="com.ynsh.model.ZanedUnit">
+        SELECT open_id,unit_id
+        FROM t_client_zaned_unit
+        WHERE open_id = #{openId} AND unit_id = #{unitId} AND del_flag = FALSE
+    </select>
+
+    <select id="getFocusedClient" parameterType="com.ynsh.model.FocusedUnit" resultType="com.ynsh.model.FocusedUnit">
+        SELECT open_id,unit_id
+        FROM t_client_focused_unit
+        WHERE open_id = #{openId} AND unit_id = #{unitId} AND del_flag = FALSE
+    </select>
+
+</mapper>
