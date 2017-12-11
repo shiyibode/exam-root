@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynsh.modules.sys.dao.OrganizationDao">
+
+    <sql id="organizationColumns">
+		a.id,
+		a.parent_id,
+		array_to_string(a.parent_ids, ',') AS parent_ids,
+		a.area_id AS "area.id",
+		a.code,
+		a.name,
+		a.sort,
+		a.icon_cls,
+		a.type,
+		a.grade,
+		a.address, 
+		a.zip_code, 
+		a.master, 
+		a.phone, 
+		a.fax, 
+		a.email, 
+		a.remarks,
+		a.create_by AS "createBy.id",
+		a.create_time,
+		a.update_by AS "updateBy.id",
+		a.update_time,
+		a.del_flag,
+		a.useable AS useable,
+		a.primary_person AS "primaryPerson.id",
+		a.deputy_person AS "deputyPerson.id",
+		ar.name AS "area.name",
+		ar.parent_ids AS "area.parentIds",
+		pp.name AS "primaryPerson.name",
+		dp.name AS "deputyPerson.name"
+	</sql>
+
+    <sql id="organizationJoins">
+		LEFT JOIN t_sys_area ar ON ar.id = a.area_id
+		LEFT JOIN t_sys_user pp ON pp.id = a.primary_person
+		LEFT JOIN t_sys_user dp ON dp.id = a.deputy_person
+    </sql>
+
+    <select id="get" resultType="Organization">
+        SELECT
+        <include refid="organizationColumns"/>
+        FROM t_sys_organization a
+        <include refid="organizationJoins"/>
+        WHERE a.id = #{id}
+    </select>
+
+    <select id="findList" resultType="Organization">
+        SELECT
+        <include refid="organizationColumns"/>
+        FROM t_sys_organization a
+        <include refid="organizationJoins"/>
+        WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+        <if test="type != null">
+            AND a.type = #{type}
+        </if>
+        <!-- 数据范围过滤 -->
+        ${sqlMap.dsf}
+        OR a.id = #{currentUserOrganization.organization.id}
+        ORDER BY a.sort
+    </select>
+
+    <select id="findAllList" resultType="Organization">
+        SELECT
+        <include refid="organizationColumns"/>
+        FROM t_sys_organization a
+        <include refid="organizationJoins"/>
+        WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+        <if test="type != null">
+            AND a.type = #{type}
+        </if>
+        ORDER BY a.sort
+    </select>
+
+    <select id="findByParentId" resultType="Organization">
+        SELECT
+          <include refid="organizationColumns"/>
+        FROM t_sys_organization a
+          <include refid="organizationJoins"/>
+        WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+        AND a.parent_id = #{parentId}
+        ORDER BY a.code
+    </select>
+
+    <select id="findByParentIdsLike" resultType="Organization">
+        SELECT
+        <include refid="organizationColumns"/>
+        FROM t_sys_organization a
+        <include refid="organizationJoins"/>
+        WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND a.parent_ids @> CAST(string_to_array(#{parentIds}, ',') AS INTEGER[])
+        ORDER BY a.code
+    </select>
+
+    <insert id="insert">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT currval('t_sys_organization_id_seq') AS id
+        </selectKey>
+        INSERT INTO t_sys_organization
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null and id > 0">
+                id,
+            </if>
+            <if test="parentId != null">
+                parent_id,
+            </if>
+            <if test="parentIds != null">
+                parent_ids,
+            </if>
+            <if test="area != null and area.id != null">
+                area_id,
+            </if>
+            <if test="code != null">
+                code,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="sort != null">
+                sort,
+            </if>
+            <if test="iconCls != null">
+                icon_cls,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="grade != null">
+                grade,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="zipCode != null">
+                zip_code,
+            </if>
+            <if test="master != null">
+                master,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="fax != null">
+                fax,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="createBy != null and createBy.id != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null and updateBy.id != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="remarks != null">
+                remarks,
+            </if>
+            <if test="delFlag != null">
+                del_flag,
+            </if>
+            <if test="useable != null">
+                useable,
+            </if>
+            <if test="primaryPerson != null and primaryPerson.id != null">
+                primary_person,
+            </if>
+            <if test="deputyPerson != null and deputyPerson.id != null">
+                deputy_person
+            </if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id != null and id > 0">
+                #{id},
+            </if>
+            <if test="parentId != null">
+                #{parentId},
+            </if>
+            <if test="parentIds != null">
+                <![CDATA[ CAST(string_to_array(#{parentIds}, ',') AS INTEGER[]), ]]>
+            </if>
+            <if test="area != null and area.id != null">
+                #{area.id},
+            </if>
+            <if test="code != null">
+                #{code},
+            </if>
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="sort != null">
+                #{sort},
+            </if>
+            <if test="iconCls != null">
+                #{iconCls},
+            </if>
+            <if test="type != null">
+                #{type},
+            </if>
+            <if test="grade != null">
+                #{grade},
+            </if>
+            <if test="address != null">
+                #{address},
+            </if>
+            <if test="zipCode != null">
+                #{zipCode},
+            </if>
+            <if test="master != null">
+                #{master},
+            </if>
+            <if test="phone != null">
+                #{phone},
+            </if>
+            <if test="fax != null">
+                #{fax},
+            </if>
+            <if test="email != null">
+                #{email},
+            </if>
+            <if test="createBy != null and createBy.id != null">
+                #{createBy.id},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateBy != null and updateBy.id != null">
+                #{updateBy.id},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="remarks != null">
+                #{remarks},
+            </if>
+            <if test="delFlag != null">
+                #{delFlag},
+            </if>
+            <if test="useable != null">
+                #{useable},
+            </if>
+            <if test="primaryPerson != null and primaryPerson.id != null">
+                #{primaryPerson.id},
+            </if>
+            <if test="deputyPerson != null and deputyPerson.id != null">
+                #{deputyPerson.id}
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update">
+		UPDATE t_sys_organization
+		<set>
+            <if test="parentId != null">
+			  parent_id = #{parentId},
+            </if>
+            <if test="parentIds != null">
+			  parent_ids = CAST(string_to_array(#{parentIds}, ',') AS INTEGER[]),
+            </if>
+            <if test="area != null and area.id != null">
+			  area_id = #{area.id},
+            </if>
+            <if test="code != null">
+			  code = #{code},
+            </if>
+            <if test="name != null">
+			  name = #{name},
+            </if>
+            <if test="sort != null">
+              sort = #{sort},
+            </if>
+            <if test="iconCls != null">
+			  icon_cls = #{iconCls},
+            </if>
+            <if test="type != null">
+			  type = #{type},
+            </if>
+            <if test="grade != null">
+			  grade = #{grade},
+            </if>
+            <if test="address != null">
+			  address = #{address},
+            </if>
+            <if test="zipCode != null">
+			  zip_code = #{zipCode},
+            </if>
+            <if test="master != null">
+			  master = #{master},
+            </if>
+            <if test="phone != null">
+			  phone = #{phone},
+            </if>
+            <if test="fax != null">
+			  fax = #{fax},
+            </if>
+            <if test="email != null">
+			  email = #{email},
+            </if>
+            <if test="updateBy != null and updateBy.id != null">
+			  update_by = #{updateBy.id},
+            </if>
+            <if test="updateTime != null">
+			  update_time = #{updateTime},
+            </if>
+            <if test="remarks != null">
+			  remarks = #{remarks},
+            </if>
+            <if test="useable != null">
+			  useable=#{useable},
+            </if>
+            <if test="primaryPerson != null and primaryPerson.id != null">
+			  primary_person=#{primaryPerson.id},
+            </if>
+            <if test="deputyPerson != null and deputyPerson.id != null">
+			  deputy_person=#{deputyPerson.id}
+            </if>
+        </set>
+		WHERE id = #{id}
+	</update>
+
+    <update id="updateParentIds">
+		UPDATE t_sys_organization SET 
+			parent_ids = CAST(string_to_array(#{parentIds}, ',') AS INTEGER[])
+		WHERE id = #{id}
+	</update>
+
+    <update id="delete">
+        UPDATE t_sys_organization SET
+        del_flag = #{DEL_FLAG_DELETE}
+        WHERE id = #{id} OR parent_ids @> CAST(ARRAY[#{id}] AS INTEGER[])
+    </update>
+
+</mapper>

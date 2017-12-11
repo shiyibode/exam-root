@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynsh.modules.sys.dao.UserOrganizationDao">
+    <resultMap id="userResult" type="com.ynsh.modules.sys.entity.User">
+        <id property="id" column="user_id" />
+        <result property="code" column="user_code" />
+        <result property="loginPassword" column="user_login_password" />
+        <result property="auditPassword" column="user_audit_password" />
+        <result property="name" column="user_name" />
+        <result property="email" column="user_email" />
+        <result property="phone" column="user_phone" />
+        <result property="mobile" column="user_mobile" />
+        <result property="type" column="user_type" />
+        <result property="photo" column="user_photo" />
+        <result property="idCard" column="user_id_card" />
+        <result property="birthday" column="user_birthday" />
+        <result property="gender" column="user_gender" />
+        <result property="address" column="user_address" />
+        <result property="entryDate" column="user_entry_date" />
+        <result property="post" column="user_post" />
+        <result property="loginUseable" column="user_login_useable" />
+        <result property="auditUseable" column="user_audit_useable" />
+        <result property="remarks" column="user_remarks" />
+        <result property="createBy.id" column="user_create_by" />
+        <result property="createTime" column="user_create_time" />
+        <result property="updateBy.id" column="user_update_by" />
+        <result property="updateTime" column="user_update_time" />
+        <result property="loginIp" column="user_login_ip" />
+        <result property="loginTime" column="user_login_time" />
+        <result property="delFlag" column="user_del_flag" />
+    </resultMap>
+    
+    <resultMap id="userOrganizationResult" type="com.ynsh.modules.sys.entity.UserOrganization">
+        <id property="id" column="id" />
+        <result property="startDate" column="start_date" />
+        <result property="endDate" column="end_date" />
+        <result property="remarks" column="remarks" />
+        <result property="status" column="status" />
+        <result property="createBy.id" column="create_by" />
+        <result property="createTime" column="create_time" />
+        <result property="updateBy.id" column="update_by" />
+        <result property="updateTime" column="update_time" />
+        <result property="delFlag" column="del_flag" />
+
+        <association property="user" javaType="com.ynsh.modules.sys.entity.User">
+            <result property="id" column="user_id" />
+            <result property="code" column="user_code" />
+            <result property="loginPassword" column="user_login_password" />
+            <result property="auditPassword" column="user_audit_password" />
+            <result property="name" column="user_name" />
+            <result property="email" column="user_email" />
+            <result property="phone" column="user_phone" />
+            <result property="mobile" column="user_mobile" />
+            <result property="type" column="user_type" />
+            <result property="photo" column="user_photo" />
+            <result property="idCard" column="user_id_card" />
+            <result property="birthday" column="user_birthday" />
+            <result property="gender" column="user_gender" />
+            <result property="address" column="user_address" />
+            <result property="entryDate" column="user_entry_date" />
+            <result property="post" column="user_post" />
+            <result property="loginUseable" column="user_login_useable" />
+            <result property="auditUseable" column="user_audit_useable" />
+            <result property="remarks" column="user_remarks" />
+            <result property="createBy.id" column="user_create_by" />
+            <result property="createTime" column="user_create_time" />
+            <result property="updateBy.id" column="user_update_by" />
+            <result property="updateTime" column="user_update_time" />
+            <result property="loginIp" column="user_login_ip" />
+            <result property="loginTime" column="user_login_time" />
+            <result property="delFlag" column="user_del_flag" />
+
+            <collection property="roleList" ofType="com.ynsh.modules.sys.entity.Role">
+                <id property="id" column="roleList.id" />
+                <result property="module.id" column="roleList.module.id" />
+                <result property="name" column="roleList.name" />
+                <result property="enname" column="roleList.enname" />
+                <result property="roleType" column="roleList.roleType" />
+                <result property="dataScope" column="roleList.dataScope" />
+            </collection>
+        </association>
+
+        <association property="organization" javaType="com.ynsh.modules.sys.entity.Organization">
+            <id property="id" column="org_id" />
+            <result property="parentId" column="org_parent_id" />
+            <result property="parentIds" column="org_parent_ids" />
+            <result property="code" column="org_code" />
+            <result property="name" column="org_name" />
+        </association>
+    </resultMap>
+
+    <sql id="userOrgColumns">
+        a.id,
+        a.start_date,
+        a.end_date,
+        a.remarks,
+        a.status,
+        a.create_by,
+        a.create_time,
+        a.update_by,
+        a.update_time,
+        a.del_flag,
+    </sql>
+
+    <sql id="userColumns">
+        u.id AS user_id, u.code AS user_code,
+        u.login_password AS user_login_password,
+        u.audit_password AS user_audit_password,
+        u.name AS user_name, u.email AS user_email,
+        u.phone AS user_phoe, u.mobile AS user_mobile,
+        u.type AS user_type, u.photo AS user_photo,
+        u.id_card AS user_id_card,
+        u.birthday AS user_brithday, u.gender AS user_gender,
+        u.address AS user_address, u.entry_date AS user_entry_date,
+        u.post AS user_post, u.login_useable as user_login_useable,
+        u.audit_useable AS user_audit_useable, u.remarks AS user_remarks,
+        u.create_by AS user_create_by, u.create_time AS user_create_time,
+        u.update_by AS user_update_by, u.update_time AS user_update_time,
+        u.login_ip AS user_login_ip, u.login_time AS user_login_time,
+        u.del_flag AS user_del_flag
+    </sql>
+
+    <sql id="organizationColumns">
+        ,o.id AS org_id, o.parent_id AS org_parent_id,
+        array_to_string(o.parent_ids, ',') AS org_parent_ids,
+        o.code AS org_code, o.name as org_name
+    </sql>
+
+    <sql id="userRoleColumns">
+        , r.id AS "roleList.id",
+        r.module_id AS "roleList.module.id",
+        r.name AS "roleList.name",
+        r.enname AS "roleList.enname",
+        r.role_type AS "roleList.roleType",
+        r.data_scope AS "roleList.dataScope"
+    </sql>
+
+    <sql id="uoJoins">
+        LEFT JOIN t_sys_user u ON u.id = a.user_id
+        LEFT JOIN t_sys_organization o ON o.id = a.organization_id
+    </sql>
+
+    <sql id="userRolesJoins">
+        <!-- 一对多的关系用  LEFT OUTER JOIN 连接, 在分页计算总数时用于外查询 -->
+        LEFT OUTER JOIN t_sys_user_role ur ON ur.user_id = a.user_id
+        LEFT OUTER JOIN t_sys_role r ON r.id = ur.role_id
+    </sql>
+
+    <!-- 根据ID获取用户与机构 -->
+    <select id="get" resultMap="userOrganizationResult">
+        SELECT
+          <include refid="userOrgColumns" />
+          <include refid="userColumns" />
+          <include refid="organizationColumns" />
+          <include refid="userRoleColumns" />
+        FROM t_sys_user_organization a
+          <include refid="uoJoins" />
+          <include refid="userRolesJoins" />
+        WHERE a.id = #{id}
+    </select>
+
+
+    <!-- 根据用户ID查询用户且用户在机构是“在职”状态 -->
+    <select id="getByUserId" resultMap="userOrganizationResult" parameterType="Long" >
+        SELECT
+        <include refid="userOrgColumns" />
+        <include refid="userColumns" />
+        <include refid="organizationColumns" />
+        <include refid="userRoleColumns" />
+        FROM t_sys_user_organization a
+        <include refid="uoJoins" />
+        <include refid="userRolesJoins" />
+        WHERE u.id = #{userId} and a.status = 1
+    </select>
+
+    <!-- 根据登录名,柜员编号查询用户且用户在机构是“在职”状态 -->
+    <select id="getByUserCode" resultMap="userOrganizationResult" parameterType="String" >
+        SELECT
+        <include refid="userOrgColumns" />
+        <include refid="userColumns" />
+        <include refid="organizationColumns" />
+        <include refid="userRoleColumns" />
+        FROM t_sys_user_organization a
+        <include refid="uoJoins" />
+        <include refid="userRolesJoins" />
+        WHERE u.code = #{userCode} and a.status = 1
+    </select>
+
+    <!-- 查询用户数量 -->
+    <select id="findCount" resultType="Long">
+        SELECT
+          COUNT(0)
+        FROM t_sys_user_organization a
+        <include refid="uoJoins"/>
+        WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND u.del_flag = #{DEL_FLAG_NORMAL} <!-- AND uo.status = #{userOrganization.STATUS_INOFFICE} -->
+        <if test="organization != null and organization.id != null">
+            AND (o.id = #{organization.id} OR o.parent_ids @> CAST(ARRAY[#{organization.id}] AS INTEGER[]))
+        </if>
+        <!-- 如果不是超级管理员，则不显示超级管理员用户 -->
+        <if test="!currentUserOrganization.user.admin">
+            AND u.id != 1
+        </if>
+        <if test="user != null and user.code != null and user.code != ''">
+            AND u.code like '%'||#{user.code}||'%'
+        </if>
+        <if test="user != null and user.name != null and user.name != ''">
+            AND u.name like '%'||#{user.name}||'%'
+        </if>
+        <if test="userCodeOrName != null and userCodeOrName != ''">
+            AND (u.code like '%'||#{userCodeOrName}||'%' OR u.name like '%'||#{userCodeOrName}||'%')
+        </if>
+        <if test="notUserType != null">
+            AND u.type != #{notUserType}
+        </if>
+        <!-- 数据范围过滤 -->
+        ${sqlMap.dsf}
+    </select>
+
+    <!-- 分页查询用户信息 -->
+    <select id="findList" resultMap="userOrganizationResult">
+        SELECT a.*
+          <include refid="userRoleColumns" />
+        FROM (
+            SELECT
+                <include refid="userOrgColumns" />
+                <include refid="userColumns" />
+                <include refid="organizationColumns" />
+            FROM t_sys_user_organization a
+            <include refid="uoJoins"/>
+            WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND u.del_flag = #{DEL_FLAG_NORMAL} <!-- AND uo.status = #{userOrganization.STATUS_INOFFICE} -->
+            <if test="organization != null and organization.id != null">
+                AND (o.id = #{organization.id} OR o.parent_ids @> CAST(ARRAY[#{organization.id}] AS INTEGER[]))
+            </if>
+            <!-- 如果不是超级管理员，则不显示超级管理员用户 -->
+            <if test="!currentUserOrganization.user.admin">
+                AND u.id != 1
+            </if>
+            <if test="user != null and user.code != null and user.code != ''">
+                AND u.code like '%'||#{user.code}||'%'
+            </if>
+            <if test="user != null and user.name != null and user.name != ''">
+                AND u.name like '%'||#{user.name}||'%'
+            </if>
+            <if test="userCodeOrName != null and userCodeOrName != ''">
+                AND (u.code like '%'||#{userCodeOrName}||'%' OR u.name like '%'||#{userCodeOrName}||'%')
+            </if>
+            <if test="notUserType != null">
+                AND u.type != #{notUserType}
+            </if>
+            <!-- 数据范围过滤 -->
+            ${sqlMap.dsf}
+            <choose>
+                <when test="page !=null and page.orderBy != null and page.orderBy != ''">
+                    ORDER BY ${page.orderBy}
+                </when>
+                <otherwise>
+                    ORDER BY u.code, a.start_date
+                </otherwise>
+            </choose>
+            <if test="page != null and page.start >= 0 and page.pageSize > 0">
+                offset ${page.start} limit ${page.pageSize}
+            </if>
+        ) AS a
+        <include refid="userRolesJoins" />
+
+    </select>
+
+    <!-- 查询全部用户 -->
+    <select id="findAllList" resultMap="userOrganizationResult">
+        SELECT
+            <include refid="userOrgColumns" />
+            <include refid="userColumns" />
+            <include refid="organizationColumns" />
+        FROM t_sys_user_organization a
+            <include refid="uoJoins"/>
+        WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+        ORDER BY o.code, a.code
+    </select>
+
+    <!-- 查询全部用户数目 -->
+    <select id="findAllCount" resultType="long">
+        SELECT
+        COUNT(1)
+        FROM t_sys_user_organization a
+        WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+    </select>
+
+
+    <!-- 通过柜员号获取用户信息，不包含机构信息 -->
+    <select id="getUserByUserCode" resultMap="userResult" parameterType="String">
+        SELECT
+          <include refid="userColumns" />
+        FROM t_sys_user u
+        WHERE u.del_flag = FALSE and u.code = #{tellerCode}
+    </select>
+
+    <!-- 插入用户 -->
+    <insert id="insertUser">
+        <selectKey resultType="java.lang.Long"  order="AFTER" keyProperty="id" >
+            SELECT currval('t_sys_user_id_seq') AS id
+        </selectKey>
+        INSERT INTO t_sys_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="code != null">
+                code,
+            </if>
+            <if test="loginPassword != null">
+                login_password,
+            </if>
+            <if test="auditPassword != null">
+                audit_password,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="mobile != null">
+                mobile,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="photo != null">
+                photo,
+            </if>
+            <if test="idCard != null">
+                id_card,
+            </if>
+            <if test="birthday != null">
+                birthday,
+            </if>
+            <if test="gender != null">
+                gender,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="entryDate != null">
+                entry_date,
+            </if>
+            <if test="post != null">
+                post,
+            </if>
+            <if test="loginUseable != null">
+                login_useable,
+            </if>
+            <if test="auditUseable != null">
+                audit_useable,
+            </if>
+            <if test="remarks != null">
+                remarks,
+            </if>
+            <if test="createBy != null and createBy.id != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null and updateBy.id">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="delFlag != null">
+                del_flag
+            </if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="code != null">
+                #{code},
+            </if>
+            <if test="loginPassword != null">
+                #{loginPassword},
+            </if>
+            <if test="auditPassword != null">
+                #{auditPassword},
+            </if>
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="email != null">
+                #{email},
+            </if>
+            <if test="phone != null">
+                #{phone},
+            </if>
+            <if test="mobile != null">
+                #{mobile},
+            </if>
+            <if test="type != null">
+                #{type},
+            </if>
+            <if test="photo != null">
+                #{photo},
+            </if>
+            <if test="idCard != null">
+                #{idCard},
+            </if>
+            <if test="birthday != null">
+                #{birthday},
+            </if>
+            <if test="gender != null">
+                #{gender},
+            </if>
+            <if test="address != null">
+                #{address},
+            </if>
+            <if test="entryDate != null">
+                #{entryDate},
+            </if>
+            <if test="post != null">
+                #{post},
+            </if>
+            <if test="loginUseable != null">
+                #{loginUseable},
+            </if>
+            <if test="auditUseable != null">
+                #{auditUseable},
+            </if>
+            <if test="remarks != null">
+                #{remarks},
+            </if>
+            <if test="createBy != null and createBy.id != null">
+                #{createBy.id},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateBy != null and updateBy.id">
+                #{updateBy.id},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="delFlag != null">
+                #{delFlag}
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 更新用户 -->
+    <update id="updateUser">
+        UPDATE t_sys_user
+        <set>
+            <if test="code != null">
+                code = #{code},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="email != null">
+                email = #{email},
+            </if>
+            <if test="phone != null">
+                phone = #{phone},
+            </if>
+            <if test="mobile != null">
+                mobile = #{mobile},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="photo != null">
+                photo = #{photo},
+            </if>
+            <if test="idCard != null">
+                id_card = #{idCard},
+            </if>
+            <if test="birthday != null">
+                birthday = #{birthday},
+            </if>
+            <if test="gender != null">
+                gender = #{gender},
+            </if>
+            <if test="address != null">
+                address = #{address},
+            </if>
+            <if test="entryDate != null">
+                entry_date = #{entryDate},
+            </if>
+            <if test="post != null">
+                post = #{post},
+            </if>
+            <if test="loginUseable != null">
+                login_useable = #{loginUseable},
+            </if>
+            <if test="auditUseable != null">
+                audit_useable = #{auditUseable},
+            </if>
+            <if test="remarks != null">
+                remarks = #{remarks},
+            </if>
+            <if test="updateBy != null and updateBy.id">
+                update_by = #{updateBy.id},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 更新用户密码 -->
+    <update id="updateUserPassword">
+        UPDATE t_sys_user
+        <set>
+            <if test="loginPassword != null">
+                login_password = #{loginPassword},
+            </if>
+            <if test="auditPassword != null">
+                audit_password = #{auditPassword},
+            </if>
+            <if test="updateBy != null and updateBy.id">
+                update_by = #{updateBy.id},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime}
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 更新登录信息，如登录IP、登录时间 -->
+    <update id="updateUserLoginInfo">
+        UPDATE t_sys_user SET
+        login_ip = #{loginIp},
+        login_time = #{loginTime}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 逻辑删除用户 -->
+    <update id="deleteUser">
+        UPDATE t_sys_user SET
+        del_flag = #{DEL_FLAG_DELETE}
+        WHERE id = #{id}
+    </update>
+
+
+    <!-- 用户机构相关 -->
+    <sql id="userOrganizationColumns">
+        a.id,
+        a.user_id,
+        a.organization_id,
+        a.start_date,
+        a.end_date,
+        a.remarks,
+        a.status,
+        a.create_by AS "createBy.id",
+        a.create_time,
+        a.update_by AS "updateBy.id",
+        a.update_time
+    </sql>
+
+    <select id="getUserOrganizationById" resultType="UserOrganization" parameterType="Long">
+        SELECT
+        <include refid="userOrganizationColumns" />
+        FROM t_sys_user_organization a
+        WHERE id = #{id} AND del_flag = false
+    </select>
+
+    <select id="findUserOrganizationList" resultType="UserOrganization">
+        SELECT
+        <include refid="userOrganizationColumns" />
+        FROM t_sys_user_organization a
+        WHERE del_flag = FALSE
+        <if test="userId != null">
+            AND user_id = #{userId}
+        </if>
+        <if test="organizationId != null">
+            AND organization_id = #{organizationId}
+        </if>
+        <if test="startDate != null">
+            AND start_date = #{startDate}
+        </if>
+        <if test="endDate != null">
+            AND end_date = #{endDate}
+        </if>
+        <if test="status != null">
+            AND status = #{status}
+        </if>
+    </select>
+
+    <!-- 插入机构和用户关联表数据 -->
+    <insert id="insert">
+        <selectKey resultType="java.lang.Long"  order="AFTER" keyProperty="id" >
+            SELECT currval('t_sys_user_organization_id_seq') AS id
+        </selectKey>
+        INSERT INTO t_sys_user_organization
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="user != null and user.id != null">
+                user_id,
+            </if>
+            <if test="organization != null and organization.id != null">
+                organization_id,
+            </if>
+            <if test="startDate != null">
+                start_date,
+            </if>
+            <if test="endDate != null">
+                end_date,
+            </if>
+            <if test="remarks != null">
+                remarks,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="createBy != null and createBy.id != null">
+                create_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="updateBy != null and updateBy.id != null">
+                update_by,
+            </if>
+            <if test="delFlag != null">
+                del_flag
+            </if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="user != null and user.id != null">
+                #{user.id},
+            </if>
+            <if test="organization != null and organization.id != null">
+                #{organization.id},
+            </if>
+            <if test="startDate != null">
+                #{startDate},
+            </if>
+            <if test="endDate != null">
+                #{endDate},
+            </if>
+            <if test="remarks != null">
+                #{remarks},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="createBy != null and createBy.id != null">
+                #{createBy.id},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+            <if test="updateBy != null and updateBy.id != null">
+                #{updateBy.id},
+            </if>
+            <if test="delFlag != null">
+                #{delFlag}
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 更新机构和用户关联表数据 -->
+    <update id="update">
+        UPDATE
+        t_sys_user_organization
+        SET
+        user_id = #{user.id},
+        organization_id = #{organization.id},
+        start_date = #{startDate},
+        end_date = #{endDate},
+        remarks = #{remarks},
+        status = #{status},
+        update_time = #{updateTime},
+        update_by = #{updateBy.id}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 物理删除机构和用户关联表数据 -->
+    <delete id="realDelete">
+        DELETE FROM t_sys_user_organization WHERE id = #{id}
+    </delete>
+
+    <!-- 逻辑删除机构和用户关联表数据 -->
+    <delete id="delete">
+        UPDATE t_sys_user_organization SET del_flag = #{DEL_FLAG_DELETE} WHERE id = #{id}
+    </delete>
+
+    <!--<delete id="deleteByUserId">-->
+        <!--UPDATE t_sys_user_organization SET del_flag = #{DEL_FLAG_DELETE} WHERE user_id = #{userId}-->
+    <!--</delete>-->
+
+    <!--<delete id="deleteByOrganizationId">-->
+        <!--UPDATE t_sys_user_organization SET del_flag = #{DEL_FLAG_DELETE} WHERE organization_id = #{organizationId}-->
+    <!--</delete>-->
+
+
+    <!-- 删除用户和角色关联表数据 -->
+    <delete id="deleteUserRole">
+        DELETE FROM t_sys_user_role WHERE user_id = #{id}
+    </delete>
+
+    <!-- 插入用户和角色关联表数据 -->
+    <insert id="insertUserRole">
+        INSERT INTO t_sys_user_role(user_id, role_id)
+        <foreach collection="roleList" item="role" separator=" union all ">
+            SELECT #{id}, #{role.id}
+        </foreach>
+    </insert>
+
+    <select id="findUserListByRoleId" resultType="UserOrganization">
+        select a.id AS "user.id", a.code AS "user.code" from t_sys_user a LEFT JOIN t_sys_user_role r ON r.user_id = a.id AND r.role_id = #{roleId}
+    </select>
+
+</mapper>

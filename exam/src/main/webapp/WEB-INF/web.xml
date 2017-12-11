@@ -5,19 +5,19 @@
          version="3.1">
 
     <!-- 项目名称 -->
-    <display-name>IMS</display-name>
+    <display-name>Exam</display-name>
 
     <!-- Spring配置文件开始  -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>
-            classpath*:/spring-*
-        </param-value>
+        <param-value>classpath*:/spring-context*.xml</param-value>
     </context-param>
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
     <!-- Spring配置文件结束 -->
+
+    <listener>
+        <!--<listener-class>com.ynsh.modules.sys.listener.WebContextListener</listener-class>-->
+        <listener-class>com.ynsh.modules.sys.listener.WebContextListener</listener-class>
+    </listener>
 
     <!-- 可以使用RequestContextHolder.currentRequestAttributes() 获取到请求的attr -->
     <listener>
@@ -59,6 +59,20 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!-- 日志 -->
+    <filter>
+        <filter-name>writeLogFilter</filter-name>
+        <filter-class>com.ynsh.modules.sys.web.filter.WriteLogFilter</filter-class>
+        <init-param>
+            <param-name>includes</param-name>
+            <param-value>create;update;delete;alter;reset</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>writeLogFilter</filter-name>
+        <url-pattern>/sys/*</url-pattern>
+    </filter-mapping>
+
     <!-- MVC Servlet -->
     <servlet>
         <servlet-name>springServlet</servlet-name>
@@ -74,4 +88,9 @@
         <servlet-name>springServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
 </web-app>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynsh.modules.sys.dao.MenuDao">
+	<!--<cache type="org.mybatis.caches.ehcache.EhcacheCache" />-->
+	<!--<cache></cache>-->
+
+	<sql id="menuColumns">
+		a.id,
+		a.parent_id,
+		array_to_string(a.parent_ids, ',') as parent_ids,
+		a.name,
+		a.type,
+		a.uri,
+		a.target,
+		a.icon_cls,
+		a.sort,
+		a.is_show,
+		a.permission,
+		a.remarks,
+		a.description,
+		a.create_by AS "createBy.id",
+		a.create_time,
+		a.update_by AS "updateBy.id",
+		a.update_time,
+		a.del_flag
+	</sql>
+
+	<select id="get" resultType="Menu">
+		SELECT
+			<include refid="menuColumns"/>
+		FROM t_sys_menu a
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="Menu">
+		SELECT
+			<include refid="menuColumns"/>
+		FROM t_sys_menu a
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+		<if test="type != null">
+			AND a.type = #{type}
+		</if>
+		<if test="isShow != null">
+			AND a.is_show = #{isShow}
+		</if>
+		ORDER BY a.sort
+	</select>
+
+	<select id="findAllList" resultType="Menu">
+		SELECT
+		<include refid="menuColumns"/>
+		FROM t_sys_menu a
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+		ORDER BY a.sort
+	</select>
+
+	<select id="findByParentId" resultType="Menu">
+		SELECT
+		<include refid="menuColumns"/>
+		FROM t_sys_menu a
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+			AND a.parent_id = #{parentId}
+		ORDER BY a.sort
+	</select>
+
+	<select id="findByParentIdsLike" resultType="Menu">
+		SELECT
+			a.id,
+			a.parent_id,
+			a.parent_ids
+        <!--<include refid="menuColumns"/>-->
+		FROM t_sys_menu a
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND a.parent_ids @> CAST(string_to_array(#{parentIds}, ',') AS INTEGER[])
+		<if test="isShow != null">
+			AND a.is_show = #{isShow}
+		</if>
+		ORDER BY a.sort
+	</select>
+
+
+	<select id="findByUserId" resultType="Menu">
+		SELECT DISTINCT
+			<include refid="menuColumns"/>
+		FROM t_sys_menu a
+		JOIN t_sys_role_menu rm ON rm.menu_id = a.id
+		JOIN t_sys_role r ON r.id = rm.role_id AND r.useable='1'
+		JOIN t_sys_user_role ur ON ur.role_id = r.id
+		JOIN t_sys_user u ON u.id = ur.user_id AND u.id = #{userId}
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND r.del_flag = #{DEL_FLAG_NORMAL} AND u.del_flag = #{DEL_FLAG_NORMAL}
+		ORDER BY a.sort
+	</select>
+	
+	<insert id="insert">
+		<selectKey resultType="java.lang.Long"  order="AFTER" keyProperty="id" >
+			SELECT currval('t_sys_menu_id_seq') AS id
+		</selectKey>
+		INSERT INTO t_sys_menu(
+			parent_id,
+			parent_ids, 
+			name,
+			type,
+			uri, 
+			target, 
+			icon_cls,
+			sort, 
+			is_show, 
+			permission, 
+			create_by, 
+			create_time, 
+			update_by, 
+			update_time, 
+			description,
+			remarks,
+			del_flag
+		) VALUES (
+			#{parentId},
+			<![CDATA[ CAST(string_to_array(#{parentIds}, ',') AS INTEGER[]), ]]>
+			#{name},
+			#{type},
+			#{uri}, 
+			#{target}, 
+			#{iconCls},
+			#{sort}, 
+			#{isShow}, 
+			#{permission}, 
+			#{createBy.id}, 
+			#{createTime}, 
+			#{updateBy.id}, 
+			#{updateTime}, 
+			#{description},
+			#{remarks},
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE t_sys_menu
+		<set>
+			<if test="parentId != null">
+				parent_id = #{parentId},
+			</if>
+			<if test="parentIds != null">
+				parent_ids = CAST(string_to_array(#{parentIds}, ',') AS INTEGER[]),
+			</if>
+			<if test="name != null">
+				name = #{name},
+			</if>
+			<if test="type != null">
+				type = #{type},
+			</if>
+			<if test="uri != null">
+				uri = #{uri},
+			</if>
+			<if test="target != null">
+				target = #{target},
+			</if>
+			<if test="iconCls != null">
+				icon_cls = #{iconCls},
+			</if>
+			<if test="sort != null">
+				sort = #{sort},
+			</if>
+			<if test="isShow != null">
+				is_show = #{isShow},
+			</if>
+			<if test="permission != null">
+				permission = #{permission},
+			</if>
+			<if test="updateBy != null and updateBy.id != null">
+				update_by = #{updateBy.id},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime},
+			</if>
+			<if test="description != null">
+				description = #{description},
+			</if>
+			<if test="remarks != null">
+				remarks = #{remarks}
+			</if>
+		</set>
+		WHERE id = #{id}
+	</update>
+
+	<update id="updateParentIds">
+		UPDATE t_sys_menu SET 
+			parent_ids = CAST(string_to_array(#{parentIds}, ',') AS INTEGER[])
+		WHERE id = #{id}
+	</update>
+	
+	<update id="updateSort">
+		UPDATE t_sys_menu SET 
+			sort = #{sort}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE t_sys_menu SET
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id} OR parent_ids @> CAST(ARRAY[#{id}] AS INTEGER[])
+	</update>
+	
+</mapper>

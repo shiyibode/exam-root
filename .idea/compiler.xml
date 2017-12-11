@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="common-core" target="1.5" />
+      <module name="common-core" target="1.8" />
       <module name="dependencies" target="1.5" />
       <module name="exam" target="1.8" />
       <module name="exam-root" target="1.5" />

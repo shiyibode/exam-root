@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynsh.modules.sys.dao.OperationLogDao">
+    
+	<select id="findList" resultType="OperationLog">
+		SELECT 
+			a.*
+		FROM t_sys_operation_log a
+		<where>
+			<!-- 如果不是超级管理员，则不显示超级管理员用户 -->
+			<if test="!currentUserOrganization.user.admin">
+				a.user_id != 1
+			</if>
+			<if test="onlyUser != null and onlyUser == true">
+				AND a.user_id = #{currentUserOrganization.user.id}
+			</if>
+			<if test="beginDate != null and endDate != null">
+				AND a.op_time BETWEEN #{beginDate} AND #{endDate}
+			</if>
+		</where>
+			ORDER BY a.op_time DESC
+	</select>
+	
+	<insert id="insert">
+		<selectKey resultType="java.lang.Long"  order="AFTER" keyProperty="id" >
+			SELECT currval('t_sys_operation_log_id_seq') AS id
+		</selectKey>
+		INSERT INTO t_sys_operation_log
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="sessionId != null and sessionId != ''">
+				session_id,
+			</if>
+			<if test="ipAddr != null and ipAddr != ''">
+				ip_addr,
+			</if>
+			<if test="opTime != null">
+				op_time,
+			</if>
+			<if test="costTime != null">
+				cost_time,
+			</if>
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="userCode != null and userCode != ''">
+				user_code,
+			</if>
+			<if test="userName != null and userName != ''">
+				user_name,
+			</if>
+			<if test="title != null and title != ''">
+				title,
+			</if>
+			<if test="method != null and method != ''">
+				method,
+			</if>
+			<if test="requestUri != null and requestUri != ''">
+				request_uri,
+			</if>
+			<if test="requestBody != null and requestBody != '' and requestBody != '{}'">
+				request_body,
+			</if>
+			<if test="responseBody != null and responseBody != '' and responseBody !='{}'">
+				response_body,
+			</if>
+			<if test="params != null and params != ''">
+				params,
+			</if>
+			<if test="userAgent != null and userAgent != ''">
+				user_agent,
+			</if>
+			<if test="remarks != null and remarks != ''">
+				remarks
+			</if>
+		</trim>
+		<trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+			<if test="sessionId != null and sessionId != ''">
+				#{sessionId},
+			</if>
+			<if test="ipAddr != null and ipAddr != ''">
+				cast(#{ipAddr} as cidr),
+			</if>
+			<if test="opTime != null">
+				#{opTime},
+			</if>
+			<if test="costTime != null">
+				#{costTime},
+			</if>
+			<if test="userId != null">
+				#{userId},
+			</if>
+			<if test="userCode != null and userCode != ''">
+				#{userCode},
+			</if>
+			<if test="userName != null and userName != ''">
+				#{userName},
+			</if>
+			<if test="title != null and title != ''">
+				#{title},
+			</if>
+			<if test="method != null and method != ''">
+				#{method},
+			</if>
+			<if test="requestUri != null and requestUri != ''">
+				#{requestUri},
+			</if>
+			<if test="requestBody != null and requestBody != '' and requestBody != '{}'">
+				cast(#{requestBody} as json),
+			</if>
+			<if test="responseBody != null and responseBody != '' and responseBody !='{}'">
+				cast(#{responseBody} as json),
+			</if>
+			<if test="params != null and params != ''">
+				#{params},
+			</if>
+			<if test="userAgent != null and userAgent != ''">
+				#{userAgent},
+			</if>
+			<if test="remarks != null and remarks != ''">
+				#{remarks}
+			</if>
+		</trim>
+	</insert>
+
+	<select id="selectDateList" resultType="com.ynsh.modules.sys.entity.DateTree">
+		(select
+			'所有操作时间' as name, 'root' as type, count(0)
+		from t_sys_operation_log
+		<where>
+			<!-- 如果不是超级管理员，则不显示超级管理员用户 -->
+			<if test="!currentUserOrganization.user.admin">
+				user_id != 1
+			</if>
+			<if test="onlyUser != null and onlyUser == true">
+				AND user_id = #{currentUserOrganization.user.id}
+			</if>
+		</where>
+		group by name
+		union all select to_char(op_time, 'YYYY') as name, 'Y' as type, count(0)
+		from t_sys_operation_log
+		<where>
+			<!-- 如果不是超级管理员，则不显示超级管理员用户 -->
+			<if test="!currentUserOrganization.user.admin">
+				user_id != 1
+			</if>
+			<if test="onlyUser != null and onlyUser == true">
+				AND user_id = #{currentUserOrganization.user.id}
+			</if>
+		</where>
+		group by name
+		union all select to_char(op_time, 'YYYY-MM') as name, 'YM' as type, count(0)
+		from t_sys_operation_log
+		<where>
+			<!-- 如果不是超级管理员，则不显示超级管理员用户 -->
+			<if test="!currentUserOrganization.user.admin">
+				user_id != 1
+			</if>
+			<if test="onlyUser != null and onlyUser == true">
+				AND user_id = #{currentUserOrganization.user.id}
+			</if>
+		</where>
+		group by name
+		union all select to_char(op_time, 'YYYY-MM-DD') as name, 'YMD' as type, count(0)
+		from t_sys_operation_log
+		<where>
+			<!-- 如果不是超级管理员，则不显示超级管理员用户 -->
+			<if test="!currentUserOrganization.user.admin">
+				user_id != 1
+			</if>
+			<if test="onlyUser != null and onlyUser == true">
+				AND user_id = #{currentUserOrganization.user.id}
+			</if>
+		</where>
+		group by name) order by name
+	</select>
+	
+</mapper>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-4.1.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- task任务扫描注解 -->
+    <!--<task:annotation-driven/>-->
+
+    <!--
+        <![CDATA[
+        corn 表格达式规则
+        *  *  *  *  *  *  *
+        |  |  |  |  |  |  |=年:
+        |  |  |  |  |  |====周: 1-7
+        |  |  |  |  |=======月: 1-12
+        |  |  |  |==========日: 1-31
+        |  |  |=============时: 0-23
+        |  |================分: 0-59
+        |===================秒: 0-59
+
+        * ：匹配该域的任意值；如*用在分所在的域，表示每分钟都会触发事件。
+        ? ：匹配该域的任意值。
+        - ：匹配一个特定的范围值；如时所在的域的值是10-12，表示10、11、12点的时候会触发事件。
+        , ：匹配多个指定的值；如周所在的域的值是2,4,6，表示在周一、周三、周五就会触发事件(1表示周日，2表示周一，3表示周二，以此类推，7表示周六)。
+        / ：左边是开始触发时间，右边是每隔固定时间触发一次事件，如秒所在的域的值是5/15，表示5秒、20秒、35秒、50秒的时候都触发一次事件。
+        L ：last，最后的意思，如果是用在天这个域，表示月的最后一天，如果是用在周所在的域，如6L，表示某个月最后一个周五。（外国周日是星耀日，周一是月耀日，一周的开始是周日，所以1L=周日，6L=周五。）
+        W ：weekday，工作日的意思。如天所在的域的值是15W，表示本月15日最近的工作日，如果15日是周六，触发器将触发上14日周五。如果15日是周日，触发器将触发16日周一。如果15日不是周六或周日，而是周一至周五的某一个，那么它就在15日当天触发事件。
+        # ：用来指定每个月的第几个星期几，如6#3表示某个月的第三个星期五。
+        ]]>
+     -->
+
+    <!--配置任务-->
+    <!--<task:scheduled-tasks>-->
+        <!--<task:scheduled ref="CkcpAutoService" method="LoadAccountInfo" cron="0/59 * * * * ?"/>-->
+
+        <!-- 统计本部和各营业网点存款 -->
+        <!--<task:scheduled ref="timedTaskService" method="countDeposit" cron="0/59 * * * * ?" />-->
+        <!--<task:scheduled ref="timedTaskService" method="countDeposit" cron="1 * * 20 3 ？2017" />-->
+    <!--</task:scheduled-tasks>-->
+
+    <!--<context:component-scan base-package="com.ynsh" />-->
+
+</beans>

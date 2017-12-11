@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynsh.modules.sys.dao.RoleDao">
+
+    <resultMap id="roleResult" type="com.ynsh.modules.sys.entity.Role">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="enname" column="enname" />
+		<result property="roleType" column="roleType" />
+		<result property="dataScope" column="dataScope" />
+		<result property="remarks" column="remarks" />
+		<result property="useable" column="useable" />
+		<result property="sysData" column="sysData" />
+        <result property="createTime" column="create_time" />
+        <result property="updateTime" column="update_time" />
+        <association property="module" javaType="com.ynsh.modules.sys.entity.Menu">
+            <id property="id" column="module_id" />
+            <result property="name" column="module_name" />
+            <result property="type" column="module_type" />
+        </association>
+        <!--
+		<collection property="userList" ofType="User">
+			<id property="id" column="userList.id" />
+			<id property="code" column="userList.code" />
+			<id property="name" column="userList.name" />
+			<id property="email" column="userList.email" />
+			<id property="phone" column="userList.phone" />
+			<id property="mobile" column="userList.mobile" />
+			<id property="organization.name" column="userList.organization.name" />
+			<id property="company.name" column="userList.company.name" />
+		</collection> -->
+		<collection property="menuList" ofType="com.ynsh.modules.sys.entity.Menu">
+			<id property="id" column="menuList.id" />
+		</collection>
+		<collection property="organizationList" ofType="com.ynsh.modules.sys.entity.Organization">
+			<id property="id" column="organizationList.id" />
+		</collection>
+		<!--<collection property="menuList" column="id" javaType="List" select="selectMenuByRoleId">-->
+		<!--</collection>-->
+		<!--<collection property="organizationList" column="id" javaType="List" select="selectOrganizationByRoleId">-->
+		<!--</collection>-->
+	</resultMap>
+	
+    <sql id="roleColumns">
+    	a.id,
+    	a.module_id AS "module_id",
+    	a.name,
+    	a.enname,
+    	a.role_type AS roleType,
+		a.data_scope AS dataScope,
+		a.remarks,
+		a.create_by AS "createBy.id",
+		a.create_time,
+		a.update_by AS "updateBy.id",
+		a.update_time,
+		a.del_flag,
+    	m.name AS "module_name",
+    	m.type AS "module_type",
+    	a.useable AS useable,
+    	a.is_sys AS sysData
+    </sql>
+
+    <sql id="roleJoins">
+        LEFT JOIN t_sys_menu m ON m.id = a.module_id
+        LEFT JOIN t_sys_role_menu rm ON rm.role_id = a.id
+        LEFT JOIN t_sys_role_organization ro ON ro.role_id = a.id
+    </sql>
+
+	<select id="get" resultMap="roleResult">
+		SELECT
+			<include refid="roleColumns"/>,<!-- 
+			ur.user_id AS "userList.id",
+			u.login_name AS "userList.code",
+			u.name AS "userList.name",
+			u.email AS "userList.email",
+			u.phone AS "userList.phone",
+			u.mobile AS "userList.mobile",
+			uc.name AS "userList.company.name",
+			uo.name AS "userList.organization.name", -->
+			rm.menu_id AS "menuList.id",
+			ro.organization_id AS "organizationList.id"
+		FROM t_sys_role a
+		<include refid="roleJoins" />
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="getByName" resultMap="roleResult">
+		SELECT
+			<include refid="roleColumns"/>,
+            rm.menu_id AS "menuList.id",
+            ro.organization_id AS "organizationList.id"
+		FROM t_sys_role a
+		    <include refid="roleJoins" />
+		WHERE a.name = #{name} AND a.del_flag = #{DEL_FLAG_NORMAL}
+	</select>
+	
+	<select id="getByEnname" resultMap="roleResult">
+		SELECT
+			<include refid="roleColumns"/>,
+            rm.menu_id AS "menuList.id",
+            ro.organization_id AS "organizationList.id"
+		FROM t_sys_role a
+		    <include refid="roleJoins" />
+		WHERE a.enname = #{enname} AND a.del_flag = #{DEL_FLAG_NORMAL}
+	</select>
+	
+	<select id="findList" resultMap="roleResult">
+		SELECT
+			<include refid="roleColumns"/>,
+            rm.menu_id AS "menuList.id",
+			ro.organization_id AS "organizationList.id"
+		FROM t_sys_role a
+		    <include refid="roleJoins" />
+            LEFT JOIN t_sys_user_role ur ON ur.role_id = a.id
+            LEFT JOIN t_sys_user u ON u.id = ur.user_id
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND a.useable=#{useable}
+        <if test='module != null and module.id != null and module.id != ""'>
+            AND (m.id = #{module.id} OR m.parent_ids @> CAST(ARRAY[#{module.id}] AS INTEGER[]))
+        </if>
+		<if test='user != null and user.id != null and user.id != ""'>
+			AND u.id = #{user.id}
+		</if>
+		<if test='user != null and user.code != null and user.code != ""'>
+			AND u.code = #{user.code}
+		</if>
+		<!-- 数据范围过滤 -->
+		${sqlMap.dsf}
+		ORDER BY a.module_id
+	</select>
+	
+	<select id="findAllList" resultMap="roleResult">
+		SELECT
+			<include refid="roleColumns"/>,
+            rm.menu_id AS "menuList.id",
+            ro.organization_id AS "organizationList.id"
+		FROM t_sys_role a
+		    <include refid="roleJoins" />
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND a.useable=#{useable}
+		ORDER BY a.module_id
+	</select>
+	
+	<insert id="insert">
+		<selectKey resultType="java.lang.Long"  order="AFTER" keyProperty="id" >
+			SELECT currval('t_sys_role_id_seq') AS id
+		</selectKey>
+
+		INSERT INTO t_sys_role(
+			module_id,
+			name,
+			enname, 
+			role_type, 
+			data_scope, 
+			create_by, 
+			create_time, 
+			update_by, 
+			update_time, 
+			remarks, 
+			del_flag,
+			is_sys,
+			useable
+		) VALUES (
+			#{module.id},
+			#{name},
+			#{enname}, 
+			#{roleType}, 
+			#{dataScope}, 
+			#{createBy.id}, 
+			#{createTime}, 
+			#{updateBy.id}, 
+			#{updateTime}, 
+			#{remarks}, 
+			#{delFlag},
+			#{sysData},
+			#{useable}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE t_sys_role
+		<set>
+            <if test="module != null and module.id != null">
+			  module_id = #{module.id},
+            </if>
+            <if test="name != null and name != ''">
+			  name = #{name},
+            </if>
+            <if test="enname != null and enname != ''">
+			  enname = #{enname},
+            </if>
+            <if test="roleType != null">
+			  role_type = #{roleType},
+            </if>
+            <if test="dataScope != null">
+			  data_scope = #{dataScope},
+            </if>
+            <if test="sysData != null">
+			  is_sys = #{sysData},
+            </if>
+            <if test="useable != null">
+			  useable = #{useable},
+            </if>
+            <if test="remarks != null">
+			  remarks = #{remarks},
+            </if>
+            <if test="updateBy != null and updateBy.id != null">
+			  update_by = #{updateBy.id},
+            </if>
+            <if test="updateTime != null">
+			  update_time = #{updateTime}
+            </if>
+        </set>
+		WHERE id = #{id}
+	</update>
+
+	<!-- 角色与菜单 关联 相关操作 -->
+    <!--<select id="selectMenuByRoleId" resultType="com.ynsh.ims.modules.sys.entity.Menu">-->
+        <!--select menu_id as id from t_sys_role_menu WHERE role_id = #{id}-->
+    <!--</select>-->
+
+	<delete id="deleteRoleMenu">
+		DELETE FROM t_sys_role_menu WHERE role_id = #{id}
+	</delete>
+	
+	<insert id="insertRoleMenu">
+		INSERT INTO t_sys_role_menu(role_id, menu_id)
+		<foreach collection="menuList" item="menu" separator=" union all ">
+			SELECT #{id}, #{menu.id}
+			<if test="dbName == 'oracle'">
+                FROM dual
+			</if>
+		</foreach>
+	</insert>
+
+    <!-- 角色与机构 关联 相关操作-->
+    <!--<select id="selectOrganizationByRoleId" resultType="com.ynsh.ims.modules.sys.entity.Organization">-->
+        <!--select organization_id as id FROM t_sys_role_organization where role_id = #{id}-->
+    <!--</select>-->
+
+	<delete id="deleteRoleOrganization">
+		DELETE FROM t_sys_role_organization WHERE role_id = #{id}
+	</delete>
+	
+	<insert id="insertRoleOrganization">
+		INSERT INTO t_sys_role_organization(role_id, organization_id)
+		<foreach collection="organizationList" item="organization" separator=" union all ">
+			SELECT #{id}, #{organization.id}
+            <if test="dbName == 'oracle'">
+                FROM dual
+            </if>
+		</foreach>
+	</insert>
+
+	<update id="delete">
+        DELETE FROM t_sys_role WHERE id = #{id}
+    <!--
+		UPDATE t_sys_role SET
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+    -->
+	</update>
+	
+</mapper>
