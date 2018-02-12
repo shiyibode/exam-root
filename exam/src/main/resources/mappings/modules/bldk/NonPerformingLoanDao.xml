@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynsh.modules.bldk.dao.NonPerformingLoanDao">
+	
+    <sql id="nonPerformingLoanColumns">
+    	a.id,
+		a.org_code,
+    	a.account_no,
+    	a.customer_name,
+    	a.principal,
+    	a.interest,
+		a.compound_interest,
+		a.fx_rate,
+		a.hx_date,
+		a.interest_term,
+		a.before_hx_interest,
+		a.remarks,
+		a.create_by AS "createBy.id",
+		a.create_time,
+		a.update_by AS "updateBy.id",
+		a.update_time,
+		a.del_flag
+    </sql>
+
+	<sql id="joinOrganization">
+		LEFT JOIN t_sys_organization o ON o.code = a.org_code
+	</sql>
+
+	<select id="get" resultType="com.ynsh.modules.bldk.entity.NonPerformingLoan">
+		SELECT
+			<include refid="nonPerformingLoanColumns"/>
+		FROM t_bldk_non_performing_loan a
+		<include refid="joinOrganization" />
+		WHERE a.del_flag = FALSE AND a.id = #{id}
+	</select>
+
+
+	<select id="findList" resultType="com.ynsh.modules.bldk.entity.NonPerformingLoan">
+		SELECT
+		<include refid="nonPerformingLoanColumns"/>
+		FROM t_bldk_non_performing_loan a
+		<include refid="joinOrganization" />
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+		<if test="orgCode != null and orgCode != ''">
+			AND a.org_code = #{orgCode}
+		</if>
+		<if test="accountNo != null and accountNo != ''">
+			AND a.account_no = #{accountNo}
+		</if>
+		<if test="customerName != null and customerName != ''">
+			AND a.customer_name = #{customerName}
+		</if>
+		<if test="hxDate != null">
+			AND a.hx_date = #{hxDate}
+		</if>
+		<if test="interestTerm != null and interestTerm != ''">
+			AND a.interest_term = #{interestTerm}
+		</if>
+		<!-- 数据范围过滤 -->
+		${sqlMap.dsf}
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.id
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		<selectKey resultType="java.lang.Long"  order="AFTER" keyProperty="id" >
+			SELECT currval('t_bldk_non_performing_loan_id_seq') AS id
+		</selectKey>
+
+		INSERT INTO t_bldk_non_performing_loan(
+			org_code,
+			account_no,
+			customer_name,
+			principal,
+			interest,
+			compound_interest,
+			fx_rate,
+			hx_date,
+			interest_term,
+			before_hx_interest,
+			create_by, 
+			create_time, 
+			update_by, 
+			update_time, 
+			remarks, 
+			del_flag
+		) VALUES (
+			#{orgCode},
+			#{accountNo},
+			#{customerName},
+			#{principal},
+			#{interest},
+			#{compoundInterest},
+			#{fxRate},
+			#{hxDate},
+			#{interestTerm},
+			#{beforeHxInterest},
+			#{createBy.id},
+			#{createTime}, 
+			#{updateBy.id}, 
+			#{updateTime}, 
+			#{remarks}, 
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE t_bldk_non_performing_loan
+		<set>
+            <if test="orgCode != null and orgCode != ''">
+				org_code = #{orgCode},
+            </if>
+            <if test="accountNo != null and accountNo != ''">
+				account_no = #{accountNo},
+            </if>
+            <if test="customerName != null and customerName != ''">
+				customer_name = #{customerName},
+            </if>
+            <if test="principal != null">
+				principal = #{principal},
+            </if>
+            <if test="interest != null">
+				interest = #{interest},
+            </if>
+            <if test="compoundInterest != null">
+				compound_interest = #{compoundInterest},
+            </if>
+            <if test="fxRate != null">
+				fx_rate = #{fxRate},
+            </if>
+			<if test="hxDate != null">
+				hx_date = #{hxDate},
+			</if>
+			<if test="interestTerm != null and interestTerm != ''">
+				interest_term = #{interestTerm},
+			</if>
+			<if test="beforeHxInterest != null">
+				before_hx_interest = #{beforeHxInterest},
+			</if>
+            <if test="remarks != null">
+			  remarks = #{remarks},
+            </if>
+            <if test="updateBy != null and updateBy.id != null">
+			  update_by = #{updateBy.id},
+            </if>
+            <if test="updateTime != null">
+			  update_time = #{updateTime}
+            </if>
+        </set>
+		WHERE id = #{id}
+	</update>
+
+	<update id="delete">
+		UPDATE t_bldk_non_performing_loan SET del_flag = TRUE WHERE id = #{id}
+	</update>
+	
+</mapper>

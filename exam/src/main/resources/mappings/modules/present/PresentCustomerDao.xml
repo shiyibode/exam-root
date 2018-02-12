@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynsh.modules.present.dao.PresentCustomerDao">
+	
+    <sql id="presentCustomerColumns">
+    	a.id,
+    	a.present_id,
+    	a.customer_name,
+    	a.identity_number,
+    	a.distribute_flag,
+    	a.org_code,
+    	b.present_name AS present_name,
+		a.remarks,
+		a.create_by AS "createBy.id",
+		a.create_time,
+		a.update_by AS "updateBy.id",
+		a.update_time,
+		a.del_flag
+    </sql>
+
+	<sql id="distributedPresentCustomerColumns">
+		a.id,
+		a.present_id,
+		a.customer_name,
+		a.identity_number,
+		a.distribute_flag,
+		a.org_code,
+		b.present_name AS present_name,
+		a.remarks,
+		a.create_time AS distribute_date,
+		c.code AS teller_code,
+		a.create_by AS "createBy.id",
+		a.create_time,
+		a.update_by AS "updateBy.id",
+		a.update_time,
+		a.del_flag
+	</sql>
+
+	<sql id="presentJoin">
+		LEFT JOIN t_present_type b ON a.present_id = b.id
+	</sql>
+
+	<sql id="distributedPresentJoin">
+		LEFT JOIN t_present_type b ON a.present_id = b.id
+		LEFT JOIN t_sys_user c ON a.update_by = c.id
+	</sql>
+
+	<select id="get" resultType="com.ynsh.modules.present.entity.PresentCustomer">
+		SELECT
+			<include refid="presentCustomerColumns"/>
+		FROM t_present_customer a
+			<include refid="presentJoin" />
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND a.id = #{id}
+	</select>
+
+	<select id="getCustomerPresentsByIdentityNumber" resultType="com.ynsh.modules.present.entity.PresentCustomer">
+		SELECT
+			<include refid="presentCustomerColumns"/>
+		FROM t_present_customer a
+			<include refid="presentJoin" />
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND a.identity_number = #{identityNumber} AND a.distribute_flag = '0' AND b.distribute_type = '2' AND (a.org_code = #{orgCode} OR a.org_code = '78000')
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.id
+			</otherwise>
+		</choose>
+	</select>
+
+	<select id="getCustomerPresentsByIdentityNumberAndPresentId" resultType="com.ynsh.modules.present.entity.PresentCustomer">
+		SELECT
+			<include refid="presentCustomerColumns"/>
+		FROM t_present_customer a
+			<include refid="presentJoin" />
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND a.identity_number = #{identityNumber} AND b.id = #{presentId} AND a.distribute_flag = '1'
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.id
+			</otherwise>
+		</choose>
+	</select>
+
+	<select id="getRecords" resultType="com.ynsh.modules.present.entity.PresentCustomer">
+		SELECT
+			<include refid="distributedPresentCustomerColumns" />
+		FROM t_present_customer a
+			<include refid="distributedPresentJoin" />
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND a.distribute_flag = '1'
+			<if test="organizationId != null and organizationId != 1">
+				AND a.organization_id = #{organizationId}
+			</if>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.id
+			</otherwise>
+		</choose>
+	</select>
+
+	<select id="findList" resultType="com.ynsh.modules.present.entity.PresentCustomer">
+		SELECT
+		<include refid="presentCustomerColumns"/>
+		FROM t_present_customer a
+		<!--<include refid="joinOrganization" />-->
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.id
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		<selectKey resultType="java.lang.Long"  order="AFTER" keyProperty="id" >
+			SELECT currval('t_present_customer_id_seq') AS id
+		</selectKey>
+		INSERT INTO t_present_customer(
+			present_id,
+			customer_name,
+			identity_number,
+			phone_number,
+			account_no,
+			distribute_flag,
+			org_code,
+			organization_id,
+			create_by,
+			create_time, 
+			update_by, 
+			update_time, 
+			remarks, 
+			del_flag
+		) VALUES (
+			#{presentId},
+			#{customerName},
+			#{identityNumber},
+			#{phoneNumber},
+			#{accountNo},
+			#{distributeFlag},
+			#{orgCode},
+			#{organizationId},
+			#{createBy.id},
+			#{createTime}, 
+			#{updateBy.id}, 
+			#{updateTime}, 
+			#{remarks}, 
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE t_present_customer
+		<set>
+            <if test="presentId != null">
+				present_id = #{presentId},
+            </if>
+			<if test="customerName != null">
+				customer_name = #{customerName},
+			</if>
+            <if test="identityNumber != null">
+				identity_number = #{identityNumber},
+            </if>
+            <if test="distributeFlag != null">
+				distribute_flag = #{distributeFlag},
+            </if>
+			<if test="orgCode != null">
+				org_code = #{orgCode},
+			</if>
+            <if test="remarks != null">
+			  remarks = #{remarks},
+            </if>
+            <if test="updateBy != null and updateBy.id != null">
+			  update_by = #{updateBy.id},
+            </if>
+            <if test="updateTime != null">
+			  update_time = #{updateTime}
+            </if>
+        </set>
+		WHERE id = #{id}
+	</update>
+
+	<update id="delete">
+		UPDATE t_present_customer SET del_flag = TRUE WHERE id= #{id}
+	</update>
+	
+	<update id="distributePresent">
+		UPDATE t_present_customer SET distribute_flag = '1',organization_id = #{organizationId},update_by = #{updateBy.id} WHERE id = #{id}
+	</update>
+
+	<select id="getCustomerNoByIdentityNumber" resultType="com.ynsh.modules.present.entity.CustomerInfo">
+		SELECT no AS customer_no,name FROM t_hxsj_customer_public_base WHERE identity_no = #{identityNumber} limit 1
+	</select>
+
+	<select id="getAccountNoByCustomerNo" resultType="java.lang.String">
+		SELECT account_no from t_hxsj_customer_account WHERE customer_no = #{customerNo} AND flag = '0' limit 1
+	</select>
+	
+</mapper>

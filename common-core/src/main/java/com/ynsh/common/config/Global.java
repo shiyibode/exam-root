@@ -134,6 +134,19 @@ public class Global {
 	}
 
 	/**
+	 * 获取存款统计模块路径
+	 */
+	public static String getBldkPath() {
+		return getConfig("bldkPath");
+	}
+
+	public static Long getBldkModuleId() {
+		String mid = getConfig("bldkModuleId");
+		return Long.valueOf(mid);
+	}
+
+
+	/**
 	 * 获取URL后缀
 	 */
 	public static String getUrlSuffix() {

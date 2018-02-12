@@ -2,175 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="500b995b-8bbf-47a6-a4b2-bd9abcc6e212" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/webapp/ui/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/exam_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/exam_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/common/persistence/entity/DataEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/common/persistence/entity/TreeEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/common/utils/ExcelGenerateUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/common/utils/OrganizationTreeService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/common/utils/Reflection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/AreaDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/DictDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/LoginLogDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/MenuDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/OperationLogDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/OrganizationDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/RoleDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/UserOrganizationDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Area.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/DateTree.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Dict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/LoginLog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Menu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/OperationLog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Organization.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Role.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/UserOrganization.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/listener/WebContextListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/session/CacheSessionDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/FormAuthenticationFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/LogoutFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/SystemAuthorizingRealm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/AreaService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/DictService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/LoginLogService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/MenuService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/OperationLogService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/OrganizationService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/RoleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/SessionService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/SystemService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/UserService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/utils/DataScopeUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/utils/DictUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/utils/UserUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/utils/WriteLogUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/AreaController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/LoginLogController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/MenuController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/OperationLogController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/OrganizationController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/RoleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/SystemController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/UserController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/filter/WriteLogFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/cache/ehcache-local.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/cache/ehcache-rmi.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/log4j.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/AreaDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/DictDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/LoginLogDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/MenuDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/OperationLogDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/OrganizationDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/RoleDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/UserOrganizationDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mybatis-3-config.dtd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mybatis-refresh.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/rebel.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/spring-context-jedis.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/spring-context-task.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/spring-context.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/webapp/ui/asset-manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/webapp/ui/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/webapp/ui/manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/webapp/ui/service-worker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/webapp/ui/static/css/main.7a585a83.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/webapp/ui/static/css/main.7a585a83.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/webapp/ui/static/js/main.9a8d8e6b.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/webapp/ui/static/js/main.9a8d8e6b.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/webapp/ui/static/media/logo.5d5d9eef.svg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/controller/HotUnitController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/controller/MineController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/controller/UserController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/controller/WeiXinController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/controller/XiaoChengXuController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/controller/ZanFocusController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/dao/HotUnitDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/dao/UnitDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/dao/UserMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/dao/XiaoChengXuDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/dao/ZanFocusDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/dao/mapper/HotUnitMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/dao/mapper/UnitMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/dao/mapper/UserMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/dao/mapper/XiaoChengXuDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/dao/mapper/ZanFocusDao.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/menu/Button.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/menu/ClickButton.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/menu/Menu.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/menu/ViewButton.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/BaseModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/Client.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/ContactInfo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/FocusedUnit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/HotUnit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/Image.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/Location.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/MainPageGroup.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/MainPageGroupItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/Marker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/SearchUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/Unit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/UnitRelatedImage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/model/ZanedUnit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/po/AccessToken.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/po/BaseMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/po/Image.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/po/ImageMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/po/MaterialCount.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/po/MaterialList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/po/Music.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/po/MusicMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/po/News.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/po/NewsMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/po/TextMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/service/HotUnitService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/service/UnitService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/service/UserService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/service/XiaoChengXuService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/service/ZanFocusService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/service/impl/HotServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/service/impl/UnitServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/service/impl/UserServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/service/impl/XiaoChengXuServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/service/impl/ZanFocusServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/trans/Data.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/trans/Parts.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/trans/Symbols.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/trans/TransResult.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/util/CheckUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/util/Constant.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/util/MessageUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/util/Page.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/util/ResponseJson.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/util/WeixinUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/resources/generatorConfig.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/resources/jdbc.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/resources/log4j2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/resources/spring-config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/resources/spring-mybatis.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/createUser.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/index.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/static/imooc.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/success.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/test/java/test/dao/txVideoTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/test/java/test/dao/xstreamTest.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/exam/src/main/resources/spring-shiro.xml" afterPath="$PROJECT_DIR$/exam/src/main/resources/spring-context-shiro.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/controller/NonPerformingLoanController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/controller/RepaymentRecordController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/dao/NonPerformingLoanDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/dao/RepaymentRecordDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/entity/DailyPrincipalInterest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/entity/NonPerformingLoan.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/entity/RepaymentRecord.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/service/NonPerformingLoanService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/service/RepaymentRecordService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/controller/PresentCustomerController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/controller/PresentTypeController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/dao/PresentCustomerDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/dao/PresentTypeDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/entity/CustomerInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/entity/PresentCustomer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/entity/PresentType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/service/PresentCustomerService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/service/PresentTypeService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/bldk/NonPerformingLoanDao.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/bldk/RepaymentRecordDao.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/present/PresentCustomerDao.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/present/PresentTypeDao.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exam/src/sql/present/present.sql" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/ui/asset-manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/ui/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/ui/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/ui/manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/ui/service-worker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/ui/static/css/main.7a585a83.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/ui/static/css/main.7a585a83.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/ui/static/js/main.9a8d8e6b.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/ui/static/js/main.9a8d8e6b.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/main/webapp/ui/static/media/logo.5d5d9eef.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/sql/duobi_data.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/exam/src/sql/test-schema.sql" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/exam/src/sql/duobi.sql" afterPath="$PROJECT_DIR$/exam/src/sql/bldk/bldk.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common-core/common-core.iml" afterPath="$PROJECT_DIR$/common-core/common-core.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exam/exam.iml" afterPath="$PROJECT_DIR$/exam/exam.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exam/pom.xml" afterPath="$PROJECT_DIR$/exam/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exam/src/main/resources/mybatis-config.xml" afterPath="$PROJECT_DIR$/exam/src/main/resources/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exam/src/main/resources/spring-mvc.xml" afterPath="$PROJECT_DIR$/exam/src/main/resources/spring-mvc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/config/Global.java" afterPath="$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/config/Global.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/FormAuthenticationFilter.java" afterPath="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/FormAuthenticationFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exam/src/main/resources/ims.properties" afterPath="$PROJECT_DIR$/exam/src/main/resources/ims.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exam/src/main/resources/spring-context-shiro.xml" afterPath="$PROJECT_DIR$/exam/src/main/resources/spring-context-shiro.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exam/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/exam/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -192,67 +68,129 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="ims@192.168.2.135" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="ims@192.168.2.38" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="spring-mvc.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exam/src/main/resources/spring-mvc.xml">
+      <file leaf-file-name="PresentCustomerDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/present/PresentCustomerDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1518">
-              <caret line="69" column="110" lean-forward="false" selection-start-line="69" selection-start-column="110" selection-end-line="69" selection-end-column="110" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spring-context-shiro.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exam/src/main/resources/spring-context-shiro.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="38" column="60" lean-forward="false" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exam/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exam/src/main/resources/log4j.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebContextListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/listener/WebContextListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="13" selection-end-column="9" />
+            <state relative-caret-position="3212">
+              <caret line="146" column="25" lean-forward="false" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1518059844021" expanded="true" signature="1230:1401" ph="SELECT FROM t_present_type" />
+                <marker date="1518059844021" expanded="true" signature="1528:1724" ph="SELECT FROM t_present_customer" />
+                <marker date="1518059844021" expanded="true" signature="2701:2792" ph="SELECT FROM t_present_customer" />
+                <marker date="1518059844021" expanded="true" signature="2701:2906" ph="SELECT FROM t_present_customer" />
+                <marker date="1518059844021" expanded="true" signature="4419:5233" ph="UPDATE t_pre... " />
+                <marker date="1518059844021" expanded="true" signature="5270:5331" ph="UPDATE t_pre... " />
+                <marker date="1518059844021" expanded="true" signature="5380:5511" ph="UPDATE t_pre... " />
+                <marker date="1518059844021" expanded="true" signature="5629:5636" ph="SELECT no FR... " />
+                <marker date="1518059844021" expanded="true" signature="5629:5692" ph="SELECT no FR... " />
+                <marker date="1518059844021" expanded="true" signature="5629:5737" ph="SELECT no FR... " />
+                <marker date="1518059844021" expanded="true" signature="5822:5925" ph="SELECT accou... t_hxsj_customer_account" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SystemService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/SystemService.java">
+      <file leaf-file-name="PresentCustomerDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/dao/PresentCustomerDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+            <state relative-caret-position="418">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/entity/CustomerInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="40" column="34" lean-forward="false" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#371#372#0" expanded="false" />
+                <element signature="e#398#399#0" expanded="false" />
+                <element signature="e#438#439#0" expanded="false" />
+                <element signature="e#470#471#0" expanded="false" />
+                <element signature="e#507#508#0" expanded="false" />
+                <element signature="e#540#541#0" expanded="false" />
+                <element signature="e#592#593#0" expanded="false" />
+                <element signature="e#636#637#0" expanded="false" />
+                <element signature="e#677#678#0" expanded="false" />
+                <element signature="e#714#715#0" expanded="false" />
+                <element signature="e#774#775#0" expanded="false" />
+                <element signature="e#826#827#0" expanded="false" />
+                <element signature="e#944#945#0" expanded="false" />
+                <element signature="e#986#987#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring-context-shiro.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/exam/src/main/resources/spring-context-shiro.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="968">
+              <caret line="51" column="74" lean-forward="false" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
+              <folding>
+                <element signature="n#value#0;n#constructor-arg#0;n#bean#0;n#beans#0;n#!!top" expanded="true" />
+                <element signature="n#value#0;n#constructor-arg#0;n#bean#0;n#beans#0;n#!!top" expanded="true" />
+                <element signature="e#2031#2049#0" expanded="true" />
+                <element signature="e#2089#2109#0" expanded="true" />
+                <element signature="e#2154#2179#0" expanded="true" />
+                <element signature="e#3680#3707#0" expanded="true" />
+                <element signature="e#3806#3838#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormAuthenticationFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/FormAuthenticationFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="39" column="43" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1463#1464#0" expanded="false" />
+                <element signature="e#1498#1499#0" expanded="false" />
+                <element signature="e#1570#1571#0" expanded="false" />
+                <element signature="e#1614#1615#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SystemController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/SystemController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="880">
+              <caret line="56" column="82" lean-forward="false" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -261,35 +199,25 @@
       <file leaf-file-name="SystemAuthorizingRealm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/SystemAuthorizingRealm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="32" />
-              <folding />
+            <state relative-caret-position="528">
+              <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#8313#8314#0" expanded="false" />
+                <element signature="e#8346#8347#0" expanded="false" />
+                <element signature="e#8381#8382#0" expanded="false" />
+                <element signature="e#8416#8417#0" expanded="false" />
+                <element signature="e#8451#8452#0" expanded="false" />
+                <element signature="e#8486#8487#0" expanded="false" />
+                <element signature="e#8967#8968#0" expanded="false" />
+                <element signature="e#9011#9012#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserOrganizationDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/UserOrganizationDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spring-context.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exam/src/main/resources/spring-context.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ehcache-local.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exam/src/main/resources/cache/ehcache-local.xml">
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exam/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -303,40 +231,44 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>y</find>
-      <find>ynsh-project</find>
-      <find>ynsh-projec</find>
-      <find>ynsh-proje</find>
-      <find>ynsh-proj</find>
-      <find>ynsh-pro</find>
-      <find>ynsh-pr</find>
-      <find>ynsh-p</find>
-      <find>ynsh-</find>
-      <find>ynsh</find>
-      <find>i</find>
-      <find>ims</find>
-      <find>UserOrganizationDao</find>
-      <find>FormAuthenticationFilter</find>
-      <find>syb-PC</find>
-      <find>syb-P</find>
-      <find>syb-</find>
-      <find>sy</find>
+      <find>non</find>
+      <find>nonPer</find>
+      <find>nonPerf</find>
+      <find>nonPerfo</find>
+      <find>nonPerform</find>
+      <find>nonPerformi</find>
+      <find>nonPerformingLoa</find>
+      <find>nonPerformingLoan</find>
+      <find>nonPerformingLoanS</find>
+      <find>nonPerformingLoanSer</find>
+      <find>nonPerformingLoanServ</find>
+      <find>nonPerformingLoanServi</find>
+      <find>nonPerformingLoanServic</find>
+      <find>nonPerformingLoanService.</find>
+      <find>nonPerformingLoanService</find>
+      <find>findPage</find>
+      <find>distributedPresentJoin</find>
+      <find>distributedPresentCustomerColumns</find>
       <find>s</find>
-      <find>syb</find>
-      <find>C</find>
-      <find>Ckcp</find>
-      <find>CkcpA</find>
-      <find>CkcpAu</find>
-      <find>CkcpAut</find>
-      <find>CkcpAuto</find>
-      <find>sqlsess</find>
+      <find>sy</find>
+      <find>system</find>
+      <find>systemA</find>
+      <find>systemAu</find>
+      <find>systemAut</find>
+      <find>systemAuth</find>
+      <find>systemAutho</find>
+      <find>systemAuthor</find>
+      <find>unauthorized</find>
+      <find>formAuthenticationFilter</find>
+      <find>username</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules</dir>
@@ -348,40 +280,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/filter/WriteLogFilter.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/session/CacheSessionDAO.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/RoleDao.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/LoginLog.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/LoginLogController.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/AreaDao.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/MenuDao.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/MenuService.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/OrganizationService.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/RoleService.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/utils/WriteLogUtils.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/SystemController.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Dict.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/OperationLogController.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/AreaService.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/LoginLogDao.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/MenuController.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Menu.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/DictDao.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/DictService.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/utils/DataScopeUtils.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Role.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/OperationLogDao.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/AreaController.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/OperationLogService.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Area.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/LoginLogService.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/utils/DictUtils.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/common/persistence/entity/TreeEntity.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/common/utils/OrganizationTreeService.java" />
-        <option value="$PROJECT_DIR$/exam/pom.xml" />
-        <option value="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/OperationLogDao.xml" />
         <option value="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/LoginLogDao.xml" />
         <option value="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/DictDao.xml" />
         <option value="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/MenuDao.xml" />
@@ -390,15 +288,49 @@
         <option value="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/UserOrganizationDao.xml" />
         <option value="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/RoleDao.xml" />
         <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/LogoutFilter.java" />
-        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/FormAuthenticationFilter.java" />
         <option value="$PROJECT_DIR$/exam/src/main/resources/spring-context.xml" />
         <option value="$PROJECT_DIR$/exam/src/main/resources/spring-context-task.xml" />
         <option value="$PROJECT_DIR$/exam/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/exam/src/main/resources/spring-mvc.xml" />
-        <option value="$PROJECT_DIR$/exam/src/main/resources/spring-context-shiro.xml" />
         <option value="$PROJECT_DIR$/exam/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/listener/WebContextListener.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/exam/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/exam/src/main/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/FormAuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/service/nonPerformingLoan.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/controller/nonPerformingLoan.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/controller/NonPerformingLoan.java" />
+        <option value="$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/config/Global.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/dao/NonPerformingLoanDao.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/controller/RepaymentRecordController.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/entity/RepaymentRecord.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/dao/RepaymentRecordDao.java" />
+        <option value="$PROJECT_DIR$/exam/src/test/java/test/dao/test.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/entity/DailyPrincipalInterest.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/entity/Present.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/controller/presentController.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/controller/presentTypeController.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/controller/NonPerformingLoanController.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/bldk/RepaymentRecordDao.xml" />
+        <option value="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/bldk/NonPerformingLoanDao.xml" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/entity/NonPerformingLoan.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/service/NonPerformingLoanService.java" />
+        <option value="$PROJECT_DIR$/exam/src/sql/bldk/bldk.sql" />
+        <option value="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/present/PresentTypeDao.xml" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/dao/PresentTypeDao.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/entity/PresentType.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/service/RepaymentRecordService.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/controller/PresentTypeController.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/resources/ims.properties" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/dao/PresentCustomerDao.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/service/PresentTypeService.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/entity/CustomerInfo.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/entity/PresentCustomer.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/service/PresentCustomerService.java" />
+        <option value="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/present/PresentCustomerDao.xml" />
+        <option value="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/controller/PresentCustomerController.java" />
+        <option value="$PROJECT_DIR$/exam/src/sql/present/present.sql" />
+        <option value="$PROJECT_DIR$/exam/src/main/resources/spring-context-shiro.xml" />
       </list>
     </option>
   </component>
@@ -452,8 +384,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="27" />
-    <option name="width" value="1920" />
-    <option name="height" value="1053" />
+    <option name="width" value="1366" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -471,8 +403,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -524,6 +456,10 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -540,6 +476,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sql" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="present" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sql" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bldk" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -566,6 +536,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -651,6 +625,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="sys" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -681,7 +659,45 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cache" />
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="present" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bldk" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -712,16 +728,16 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ynsh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sys" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -753,37 +769,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exam-root" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exam-root" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ynsh" />
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -829,6 +815,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="sys" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -867,11 +857,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sys" />
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="listener" />
+              <option name="myItemId" value="present" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -905,7 +899,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sys" />
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="present" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ynsh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="present" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -943,7 +983,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="present" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -977,11 +1025,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -995,13 +1039,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dependencies" />
+              <option name="myItemId" value="exam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ynsh" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1012,14 +1072,19 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/SQL Dialects" value="PostgreSQL" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ynsh.modules.present.dao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/present" />
+      <recent name="$PROJECT_DIR$/exam/src/sql/present" />
+      <recent name="$PROJECT_DIR$/exam/src/main/resources/mappings/modules/bldk" />
+      <recent name="$PROJECT_DIR$/exam/src/sql/bldk" />
       <recent name="$PROJECT_DIR$/exam/src/main/webapp/ui" />
-      <recent name="$PROJECT_DIR$/exam/src/main/resources" />
-      <recent name="$PROJECT_DIR$/exam/src/main/resources/mappings/modules" />
-      <recent name="$PROJECT_DIR$/exam/src/main/java/com/ynsh" />
-      <recent name="$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1035,6 +1100,26 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat7">
+    <configuration default="false" name="test.myTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="exam" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test.dao" />
+      <option name="MAIN_CLASS_NAME" value="test.dao.test" />
+      <option name="METHOD_NAME" value="myTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -1361,9 +1446,15 @@
         </option>
       </method>
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat7" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.test.myTest" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.test.myTest" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1385,45 +1476,121 @@
       <workItem from="1512610649592" duration="1252000" />
       <workItem from="1512611958605" duration="6875000" />
       <workItem from="1512619594378" duration="9114000" />
-      <workItem from="1512952902875" duration="25000" />
+      <workItem from="1512952902875" duration="16397000" />
+      <workItem from="1513137139937" duration="15962000" />
+      <workItem from="1513211604976" duration="12416000" />
+      <workItem from="1513304963152" duration="478000" />
+      <workItem from="1513383809565" duration="636000" />
+      <workItem from="1513391908590" duration="2722000" />
+      <workItem from="1513817878702" duration="10264000" />
+      <workItem from="1514009356785" duration="23000" />
+      <workItem from="1514856025583" duration="13387000" />
+      <workItem from="1514951119673" duration="3724000" />
+      <workItem from="1515060071541" duration="877000" />
+      <workItem from="1515113772513" duration="43381000" />
+      <workItem from="1515543524464" duration="17266000" />
+      <workItem from="1515631153174" duration="13563000" />
+      <workItem from="1515745273912" duration="5354000" />
+      <workItem from="1515977971917" duration="19441000" />
+      <workItem from="1516061819010" duration="6340000" />
+      <workItem from="1516148356864" duration="9101000" />
+      <workItem from="1516343187020" duration="2220000" />
+      <workItem from="1516585554270" duration="11053000" />
+      <workItem from="1516667458592" duration="14965000" />
+      <workItem from="1516782927901" duration="264000" />
+      <workItem from="1516754503439" duration="10193000" />
+      <workItem from="1516839541606" duration="13787000" />
+      <workItem from="1516864536095" duration="6385000" />
+      <workItem from="1516927164491" duration="3214000" />
+      <workItem from="1517186381694" duration="13002000" />
+      <workItem from="1517271176191" duration="9230000" />
+      <workItem from="1517357726077" duration="22913000" />
+      <workItem from="1517532324514" duration="33034000" />
+      <workItem from="1517822859469" duration="5592000" />
+      <workItem from="1517877125660" duration="4097000" />
+      <workItem from="1517987680521" duration="7683000" />
+      <workItem from="1518055103280" duration="10913000" />
+      <workItem from="1518147517962" duration="4854000" />
+      <workItem from="1518310820849" duration="1539000" />
     </task>
+    <task id="LOCAL-00001" summary="迁移全部系统功能呢：机构管理、人员管理、权限控制、session控制等">
+      <created>1512953110353</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1512953110353</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="test_myTest - 2018.01.15 at 16h 01m 52s.xml">
+      <configuration name="test.myTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_myTest - 2018.01.15 at 16h 02m 01s.xml">
+      <configuration name="test.myTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_myTest - 2018.01.15 at 16h 02m 53s.xml">
+      <configuration name="test.myTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_myTest - 2018.01.15 at 16h 03m 03s.xml">
+      <configuration name="test.myTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_myTest - 2018.01.15 at 16h 03m 15s.xml">
+      <configuration name="test.myTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_myTest - 2018.01.15 at 16h 03m 26s.xml">
+      <configuration name="test.myTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_myTest - 2018.01.17 at 09h 37m 14s.xml">
+      <configuration name="test.myTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_myTest - 2018.01.17 at 09h 37m 25s.xml">
+      <configuration name="test.myTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_myTest - 2018.01.17 at 09h 37m 33s.xml">
+      <configuration name="test.myTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_myTest - 2018.01.17 at 09h 44m 02s.xml">
+      <configuration name="test.myTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18928000" />
+    <option name="totallyTimeSpent" value="385173000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32799146" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6152981" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7401575" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28907436" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66293037" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906324" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24579664" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2099359" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22306526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19625796" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946581" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36909527" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32746196" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282626" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.64679414" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1432,461 +1599,427 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="迁移全部系统功能呢：机构管理、人员管理、权限控制、session控制等" />
+    <option name="LAST_COMMIT_MESSAGE" value="迁移全部系统功能呢：机构管理、人员管理、权限控制、session控制等" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="9" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/LoginLogDao.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/bldk/RepaymentRecordDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        <state relative-caret-position="2212">
+          <caret line="137" column="59" lean-forward="false" selection-start-line="137" selection-start-column="59" selection-end-line="137" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.3.RELEASE/spring-web-4.3.3.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/core/persistence/interceptor/PreparePaginationInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/core/persistence/interceptor/SQLHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-877">
+          <caret line="103" column="31" lean-forward="false" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/core/persistence/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2156">
+          <caret line="119" column="8" lean-forward="false" selection-start-line="119" selection-start-column="7" selection-end-line="119" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/core/persistence/interceptor/PaginationInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="57" column="48" lean-forward="false" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/core/web/client/RequestJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="87" column="19" lean-forward="false" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/sql/bldk/bldk.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/bldk/NonPerformingLoanDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3146">
+          <caret line="143" column="34" lean-forward="false" selection-start-line="143" selection-start-column="34" selection-end-line="143" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/entity/NonPerformingLoan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/common/persistence/entity/DataEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="12" column="115" lean-forward="true" selection-start-line="12" selection-start-column="115" selection-end-line="12" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/LoginLogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/MenuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        <state relative-caret-position="391">
+          <caret line="64" column="53" lean-forward="false" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/RoleController.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/MenuService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="221">
+          <caret line="45" column="22" lean-forward="false" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Menu.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        <state relative-caret-position="154">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/utils/DataScopeUtils.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/utils/UserUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        <state relative-caret-position="287">
+          <caret line="140" column="19" lean-forward="false" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Role.java">
+    <entry file="file://$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/core/persistence/entity/DataEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="346">
+          <caret line="98" column="16" lean-forward="false" selection-start-line="98" selection-start-column="16" selection-end-line="98" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/OperationLogDao.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/present/PresentTypeDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        <state relative-caret-position="1144">
+          <caret line="52" column="99" lean-forward="false" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="99" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/AreaController.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/dao/PresentTypeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="220">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/OperationLogService.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/MenuDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        <state relative-caret-position="-1933">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/LoginLogService.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/controller/NonPerformingLoanController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        <state relative-caret-position="1254">
+          <caret line="76" column="71" lean-forward="false" selection-start-line="76" selection-start-column="71" selection-end-line="76" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/utils/DictUtils.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/service/NonPerformingLoanService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="418">
+          <caret line="39" column="43" lean-forward="true" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/entity/Area.java">
+    <entry file="file://$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/core/service/CrudService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        <state relative-caret-position="946">
+          <caret line="56" column="19" lean-forward="false" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/DictService.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/controller/RepaymentRecordController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="198">
+          <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/DictDao.java">
+    <entry file="file://$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/core/persistence/dao/CrudDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="208">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common-core/pom.xml">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/bldk/service/RepaymentRecordService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/entity/PresentType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/core/web/controller/CrudController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="71" column="5" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/webapp/ui/static/js/main.44abc752.js" />
+    <entry file="file://$PROJECT_DIR$/exam/src/main/webapp/ui/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dependencies/pom.xml">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/controller/PresentTypeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="62" lean-forward="false" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
-          <folding />
+        <state relative-caret-position="352">
+          <caret line="27" column="55" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/common/persistence/entity/TreeEntity.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7e915629-d020-4a2f-9f38-acef09622538/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/core/persistence/entity/BaseEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="17" column="61" lean-forward="true" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/service/PresentTypeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/ims.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/spring-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-924">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/entity/CustomerInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="40" column="34" lean-forward="false" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#371#372#0" expanded="false" />
+            <element signature="e#398#399#0" expanded="false" />
+            <element signature="e#438#439#0" expanded="false" />
+            <element signature="e#470#471#0" expanded="false" />
+            <element signature="e#507#508#0" expanded="false" />
+            <element signature="e#540#541#0" expanded="false" />
+            <element signature="e#592#593#0" expanded="false" />
+            <element signature="e#636#637#0" expanded="false" />
+            <element signature="e#677#678#0" expanded="false" />
+            <element signature="e#714#715#0" expanded="false" />
+            <element signature="e#774#775#0" expanded="false" />
+            <element signature="e#826#827#0" expanded="false" />
+            <element signature="e#944#945#0" expanded="false" />
+            <element signature="e#986#987#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/dao/PresentCustomerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/common/utils/OrganizationTreeService.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/present/PresentCustomerDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        <state relative-caret-position="3212">
+          <caret line="146" column="25" lean-forward="false" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+          <folding>
+            <marker date="1518059844021" expanded="true" signature="1230:1401" ph="SELECT FROM t_present_type" />
+            <marker date="1518059844021" expanded="true" signature="1528:1724" ph="SELECT FROM t_present_customer" />
+            <marker date="1518059844021" expanded="true" signature="2701:2792" ph="SELECT FROM t_present_customer" />
+            <marker date="1518059844021" expanded="true" signature="2701:2906" ph="SELECT FROM t_present_customer" />
+            <marker date="1518059844021" expanded="true" signature="4419:5233" ph="UPDATE t_pre... " />
+            <marker date="1518059844021" expanded="true" signature="5270:5331" ph="UPDATE t_pre... " />
+            <marker date="1518059844021" expanded="true" signature="5380:5511" ph="UPDATE t_pre... " />
+            <marker date="1518059844021" expanded="true" signature="5629:5636" ph="SELECT no FR... " />
+            <marker date="1518059844021" expanded="true" signature="5629:5692" ph="SELECT no FR... " />
+            <marker date="1518059844021" expanded="true" signature="5629:5737" ph="SELECT no FR... " />
+            <marker date="1518059844021" expanded="true" signature="5822:5925" ph="SELECT accou... t_hxsj_customer_account" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/test/java/test/dao/xstreamTest.java" />
-    <entry file="file://$PROJECT_DIR$/exam/src/test/java/test/dao/txVideoTest.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.3.RELEASE/spring-beans-4.3.3.RELEASE-sources.jar!/org/springframework/beans/factory/xml/XmlBeanDefinitionReader.java">
+    <entry file="file://$PROJECT_DIR$/exam/src/sql/present/present.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="413" column="0" lean-forward="false" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
+        <state relative-caret-position="879">
+          <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/pom.xml">
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/entity/PresentCustomer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-990">
-          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        <state relative-caret-position="1518">
+          <caret line="108" column="34" lean-forward="false" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/service/PresentCustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="90" column="18" lean-forward="false" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/present/controller/PresentCustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="111" column="47" lean-forward="false" selection-start-line="111" selection-start-column="47" selection-end-line="111" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/OperationLogDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="124" column="53" lean-forward="false" selection-start-line="124" selection-start-column="53" selection-end-line="124" selection-end-column="53" />
-          <folding>
-            <marker date="1512619074710" expanded="true" signature="267:704" ph="SELECT a.* F... t_sys_operation_log" />
-            <marker date="1512619074710" expanded="true" signature="3429:4894" ph="(select '所有操... " />
-            <marker date="1512619074710" expanded="true" signature="3430:4879" ph="select '所有操作... t_sys_operation_log" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/LoginLogDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="105" column="53" lean-forward="false" selection-start-line="105" selection-start-column="53" selection-end-line="105" selection-end-column="53" />
-          <folding>
-            <marker date="1512619074730" expanded="true" signature="259:697" ph="SELECT a.* F... t_sys_login_log" />
-            <marker date="1512619074730" expanded="true" signature="2344:2697" ph="UPDATE t_sys... " />
-            <marker date="1512619074730" expanded="true" signature="2793:4251" ph="(select '所有登... " />
-            <marker date="1512619074730" expanded="true" signature="2794:4236" ph="select '所有登录... t_sys_login_log" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/rebel.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/DictDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding>
-            <marker date="1512619074717" expanded="true" signature="532:610" ph="SELECT FROM t_sys_dict" />
-            <marker date="1512619074717" expanded="true" signature="668:1000" ph="SELECT FROM t_sys_dict" />
-            <marker date="1512619074717" expanded="true" signature="1061:1206" ph="SELECT FROM t_sys_dict" />
-            <marker date="1512619074717" expanded="true" signature="1270:1376" ph="SELECT type t_sys_dict" />
-            <marker date="1512619074717" expanded="true" signature="1444:1640" ph="SELECT a.id,... t_sys_dict" />
-            <marker date="1512619074717" expanded="true" signature="3901:4240" ph="UPDATE t_sys... " />
-            <marker date="1512619074717" expanded="true" signature="4278:4382" ph="UPDATE t_sys... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/MenuDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding>
-            <marker date="1512619074723" expanded="true" signature="674:755" ph="SELECT FROM t_sys_menu" />
-            <marker date="1512619074723" expanded="true" signature="813:1056" ph="SELECT FROM t_sys_menu" />
-            <marker date="1512619074723" expanded="true" signature="1116:1233" ph="SELECT FROM t_sys_menu" />
-            <marker date="1512619074723" expanded="true" signature="1296:1446" ph="SELECT FROM t_sys_menu" />
-            <marker date="1512619074723" expanded="true" signature="1514:1825" ph="SELECT a.id,... t_sys_menu" />
-            <marker date="1512619074723" expanded="true" signature="1887:2301" ph="SELECT DISTI... t_sys_menu" />
-            <marker date="1512619074723" expanded="true" signature="3104:4151" ph="UPDATE t_sys... " />
-            <marker date="1512619074723" expanded="true" signature="4197:4308" ph="UPDATE t_sys... " />
-            <marker date="1512619074723" expanded="true" signature="4350:4409" ph="UPDATE t_sys... " />
-            <marker date="1512619074723" expanded="true" signature="4447:4569" ph="UPDATE t_sys... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/OrganizationDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding>
-            <marker date="1512619074703" expanded="true" signature="1114:1273" ph="SELECT FROM t_sys_organization" />
-            <marker date="1512619074703" expanded="true" signature="1350:1739" ph="SELECT FROM t_sys_organization" />
-            <marker date="1512619074703" expanded="true" signature="1819:2101" ph="SELECT FROM t_sys_organization" />
-            <marker date="1512619074703" expanded="true" signature="2184:2428" ph="SELECT FROM t_sys_organization" />
-            <marker date="1512619074703" expanded="true" signature="2516:2792" ph="SELECT FROM t_sys_organization" />
-            <marker date="1512619074703" expanded="true" signature="7772:9767" ph="UPDATE t_sys... " />
-            <marker date="1512619074703" expanded="true" signature="9816:9935" ph="UPDATE t_sys... " />
-            <marker date="1512619074703" expanded="true" signature="9981:10122" ph="UPDATE t_sys... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/AreaDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding>
-            <marker date="1512619074686" expanded="true" signature="539:637" ph="SELECT FROM t_sys_area" />
-            <marker date="1512619074686" expanded="true" signature="706:959" ph="SELECT FROM t_sys_area" />
-            <marker date="1512619074686" expanded="true" signature="1031:1172" ph="SELECT FROM t_sys_area" />
-            <marker date="1512619074686" expanded="true" signature="1246:1445" ph="SELECT a.id,... t_sys_area" />
-            <marker date="1512619074686" expanded="true" signature="4222:5299" ph="UPDATE t_sys... " />
-            <marker date="1512619074686" expanded="true" signature="5348:5458" ph="UPDATE t_sys... " />
-            <marker date="1512619074686" expanded="true" signature="5504:5618" ph="UPDATE t_sys... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/UserOrganizationDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
-          <caret line="82" column="64" lean-forward="false" selection-start-line="82" selection-start-column="64" selection-end-line="82" selection-end-column="64" />
-          <folding>
-            <marker date="1512619074694" expanded="true" signature="7455:7793" ph="SELECT FROM t_sys_user_organization" />
-            <marker date="1512619074694" expanded="true" signature="7942:8289" ph="SELECT FROM t_sys_user_organization" />
-            <marker date="1512619074694" expanded="true" signature="8445:8796" ph="SELECT FROM t_sys_user_organization" />
-            <marker date="1512619074694" expanded="true" signature="8886:10058" ph="SELECT COUNT... t_sys_user_organization" />
-            <marker date="1512619074694" expanded="true" signature="10166:12135" ph="SELECT a.* F... t_sys_user_organization" />
-            <marker date="1512619074694" expanded="true" signature="12288:12593" ph="SELECT FROM t_sys_user_organization" />
-            <marker date="1512619074694" expanded="true" signature="12688:12796" ph="SELECT COUNT... t_sys_user_organization" />
-            <marker date="1512619074694" expanded="true" signature="12936:13070" ph="SELECT FROM t_sys_user" />
-            <marker date="1512619074694" expanded="true" signature="17573:19385" ph="UPDATE t_sys... " />
-            <marker date="1512619074694" expanded="true" signature="19466:19991" ph="UPDATE t_sys... " />
-            <marker date="1512619074694" expanded="true" signature="20084:20195" ph="UPDATE t_sys... " />
-            <marker date="1512619074694" expanded="true" signature="20268:20352" ph="UPDATE t_sys... " />
-            <marker date="1512619074694" expanded="true" signature="20801:20944" ph="SELECT FROM t_sys_user_organization" />
-            <marker date="1512619074694" expanded="true" signature="24254:24601" ph="UPDATE t_sys... " />
-            <marker date="1512619074694" expanded="true" signature="24682:24734" ph="DELETE FROM " />
-            <marker date="1512619074694" expanded="true" signature="24811:24892" ph="UPDATE t_sys... " />
-            <marker date="1512619074694" expanded="true" signature="25336:25385" ph="DELETE FROM " />
-            <marker date="1512619074694" expanded="true" signature="25602:25626" ph="SELECT ##{id}... " />
-            <marker date="1512619074694" expanded="true" signature="25738:25877" ph="select a.id t_sys_user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/mappings/modules/sys/RoleDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="31" column="57" lean-forward="false" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
-          <folding>
-            <marker date="1512619074737" expanded="true" signature="2813:3294" ph="SELECT , rm.... " />
-            <marker date="1512619074737" expanded="true" signature="3358:3613" ph="SELECT , rm.... " />
-            <marker date="1512619074737" expanded="true" signature="3679:3938" ph="SELECT , rm.... " />
-            <marker date="1512619074737" expanded="true" signature="4001:4817" ph="SELECT , rm.... " />
-            <marker date="1512619074737" expanded="true" signature="4883:5165" ph="SELECT , rm.... " />
-            <marker date="1512619074737" expanded="true" signature="5812:6816" ph="UPDATE t_sys... " />
-            <marker date="1512619074737" expanded="true" signature="7080:7129" ph="DELETE FROM " />
-            <marker date="1512619074737" expanded="true" signature="7706:7763" ph="DELETE FROM " />
-            <marker date="1512619074737" expanded="true" signature="8143:8182" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/web/controller/SystemController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="6" column="43" lean-forward="false" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        <state relative-caret-position="880">
+          <caret line="56" column="82" lean-forward="false" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/LogoutFilter.java">
+    <entry file="file://$PROJECT_DIR$/common-core/src/main/java/com/ynsh/common/utils/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="265">
+          <caret line="257" column="25" lean-forward="false" selection-start-line="257" selection-start-column="25" selection-end-line="257" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/SystemAuthorizingRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="false" />
+            <element signature="e#8313#8314#0" expanded="false" />
+            <element signature="e#8346#8347#0" expanded="false" />
+            <element signature="e#8381#8382#0" expanded="false" />
+            <element signature="e#8416#8417#0" expanded="false" />
+            <element signature="e#8451#8452#0" expanded="false" />
+            <element signature="e#8486#8487#0" expanded="false" />
+            <element signature="e#8967#8968#0" expanded="false" />
+            <element signature="e#9011#9012#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/FormAuthenticationFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="616">
+          <caret line="39" column="43" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1462#1463#0" expanded="false" />
-            <element signature="e#1497#1498#0" expanded="false" />
-            <element signature="e#1569#1570#0" expanded="false" />
-            <element signature="e#1613#1614#0" expanded="false" />
+            <element signature="e#1463#1464#0" expanded="false" />
+            <element signature="e#1498#1499#0" expanded="false" />
+            <element signature="e#1570#1571#0" expanded="false" />
+            <element signature="e#1614#1615#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/security/shiro/SystemAuthorizingRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/dao/UserOrganizationDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/cache/ehcache-local.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/spring-context-task.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/cache/ehcache-rmi.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="33" column="52" lean-forward="false" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/webapp/index.html" />
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/spring-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="69" column="110" lean-forward="false" selection-start-line="69" selection-start-column="110" selection-end-line="69" selection-end-column="110" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exam/src/main/resources/spring-context-shiro.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="38" column="60" lean-forward="false" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/webapp/ui/static/js/main.9a8d8e6b.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="0" column="1135763" lean-forward="false" selection-start-line="0" selection-start-column="1135763" selection-end-line="0" selection-end-column="1135763" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/webapp/ui/asset-manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/ims.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2310">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/listener/WebContextListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="13" selection-end-column="9" />
+        <state relative-caret-position="968">
+          <caret line="51" column="74" lean-forward="false" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="n#value#0;n#constructor-arg#0;n#bean#0;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#constructor-arg#0;n#bean#0;n#beans#0;n#!!top" expanded="true" />
+            <element signature="e#2031#2049#0" expanded="true" />
+            <element signature="e#2089#2109#0" expanded="true" />
+            <element signature="e#2154#2179#0" expanded="true" />
+            <element signature="e#3680#3707#0" expanded="true" />
+            <element signature="e#3806#3838#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam/src/main/java/com/ynsh/modules/sys/service/SystemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>

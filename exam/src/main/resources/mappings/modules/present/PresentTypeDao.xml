@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynsh.modules.present.dao.PresentTypeDao">
+	
+    <sql id="presentTypeColumns">
+    	a.id,
+    	a.org_code,
+    	a.distribute_type,
+    	a.present_name,
+    	a.start_date,
+    	a.end_date,
+		a.remarks,
+		a.create_by AS "createBy.id",
+		a.create_time,
+		a.update_by AS "updateBy.id",
+		a.update_time,
+		a.del_flag
+    </sql>
+
+	<sql id="joinOrganization">
+		LEFT JOIN t_sys_organization o ON o.code = a.org_code
+	</sql>
+
+	<select id="get" resultType="com.ynsh.modules.present.entity.PresentType">
+		SELECT
+			<include refid="presentTypeColumns"/>
+		FROM t_present_type a
+		<!--<include refid="joinOrganization" />-->
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND a.id = #{id}
+	</select>
+
+	<select id="findList" resultType="com.ynsh.modules.present.entity.PresentType">
+		SELECT
+		<include refid="presentTypeColumns"/>
+		FROM t_present_type a
+		<!--<include refid="joinOrganization" />-->
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.id
+			</otherwise>
+		</choose>
+	</select>
+
+	<select id="getValidPresents" resultType="com.ynsh.modules.present.entity.PresentType">
+		SELECT
+		<include refid="presentTypeColumns"/>
+		FROM t_present_type a
+		<!--<include refid="joinOrganization" />-->
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND (a.org_code = #{orgCode} OR a.org_code = '78000')
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.id
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		<selectKey resultType="java.lang.Long"  order="AFTER" keyProperty="id" >
+			SELECT currval('t_present_type_id_seq') AS id
+		</selectKey>
+		INSERT INTO t_present_type(
+			org_code,
+			distribute_type,
+			present_name,
+			start_date,
+			end_date,
+			create_by,
+			create_time, 
+			update_by, 
+			update_time, 
+			remarks, 
+			del_flag
+		) VALUES (
+			#{orgCode},
+			#{distributeType},
+			#{presentName},
+			#{startDate},
+			#{endDate},
+			#{createBy.id},
+			#{createTime}, 
+			#{updateBy.id}, 
+			#{updateTime}, 
+			#{remarks}, 
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE t_present_type
+		<set>
+            <if test="orgCode != null and orgCode != ''">
+				org_code = #{orgCode},
+            </if>
+            <if test="distributeType != null">
+				distribute_type = #{distributeType},
+            </if>
+            <if test="presentName != null">
+				present_name = #{presentName},
+            </if>
+            <if test="startDate != null">
+				start_date = #{startDate},
+            </if>
+			<if test="endDate != null">
+				end_date = #{endDate},
+			</if>
+            <if test="remarks != null">
+			  remarks = #{remarks},
+            </if>
+            <if test="updateBy != null and updateBy.id != null">
+			  update_by = #{updateBy.id},
+            </if>
+            <if test="updateTime != null">
+			  update_time = #{updateTime}
+            </if>
+        </set>
+		WHERE id = #{id}
+	</update>
+
+	<update id="delete">
+		UPDATE t_present_type SET del_flag = TRUE WHERE id = #{id}
+	</update>
+	
+</mapper>

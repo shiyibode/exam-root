@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ynsh.modules.bldk.dao.RepaymentRecordDao">
+	
+    <sql id="repaymentRecordColumns">
+    	a.id,
+    	b.account_no,
+    	b.customer_name,
+		a.non_performing_loan_id,
+    	a.repayment_principal,
+    	a.repayment_interest,
+		a.repayment_compound_interest,
+		a.repayment_date,
+		a.remarks,
+		a.create_by AS "createBy.id",
+		a.create_time,
+		a.update_by AS "updateBy.id",
+		a.update_time,
+		a.del_flag
+    </sql>
+
+	<sql id="joinOrganization">
+		LEFT JOIN t_bldk_non_performing_loan b ON a.non_performing_loan_id = b.id
+		LEFT JOIN t_sys_organization o ON o.code = b.org_code
+	</sql>
+
+	<select id="get" resultType="com.ynsh.modules.bldk.entity.RepaymentRecord">
+		SELECT
+			<include refid="repaymentRecordColumns"/>
+		FROM t_bldk_repayment_record a
+		<include refid="joinOrganization" />
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL} AND a.id = #{id}
+	</select>
+
+	<select id="findListByNonPerformingLoanId" parameterType="java.lang.Long" resultType="com.ynsh.modules.bldk.entity.RepaymentRecord">
+		SELECT
+		<include refid="repaymentRecordColumns"/>
+		FROM t_bldk_repayment_record a
+		<include refid="joinOrganization"/>
+		WHERE a.del_flag = FALSE
+			  AND a.non_performing_loan_id = #{nonPerformingLoanId}
+	</select>
+
+	<select id="findList" resultType="com.ynsh.modules.bldk.entity.RepaymentRecord">
+		SELECT
+		<include refid="repaymentRecordColumns"/>
+		FROM t_bldk_repayment_record a
+		<include refid="joinOrganization" />
+		WHERE a.del_flag = #{DEL_FLAG_NORMAL}
+		<if test="orgCode != null and orgCode != ''">
+			AND b.org_code = #{orgCode}
+		</if>
+		<if test="accountNo != null and accountNo != ''">
+			AND b.account_no = #{accountNo}
+		</if>
+		<if test="customerName != null and customerName != ''">
+			AND b.customer_name = #{customerName}
+		</if>
+		<if test="repaymentDate != null">
+			AND a.repayment_date = #{repaymentDate}
+		</if>
+		<!-- 数据范围过滤 -->
+		${sqlMap.dsf}
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.id
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		<selectKey resultType="java.lang.Long"  order="AFTER" keyProperty="id" >
+			SELECT currval('t_bldk_repayment_record_id_seq') AS id
+		</selectKey>
+
+		INSERT INTO t_bldk_repayment_record(
+			non_performing_loan_id,
+			repayment_principal,
+			repayment_interest,
+			repayment_compound_interest,
+			repayment_date,
+			create_by,
+			create_time, 
+			update_by, 
+			update_time, 
+			remarks, 
+			del_flag
+		) VALUES (
+			#{nonPerformingLoanId},
+			#{repaymentPrincipal},
+			#{repaymentInterest},
+			#{repaymentCompoundInterest},
+			#{repaymentDate},
+			#{createBy.id},
+			#{createTime}, 
+			#{updateBy.id}, 
+			#{updateTime}, 
+			#{remarks}, 
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE t_bldk_repayment_record
+		<set>
+            <if test="nonPerformingLoanId != null and nonPerformingLoanId != ''">
+				non_performing_loan_id = #{nonPerformingLoanId},
+            </if>
+            <if test="repaymentPrincipal != null">
+				repayment_principal = #{repaymentPrincipal},
+            </if>
+            <if test="repaymentInterest != null">
+				repayment_interest = #{repaymentInterest},
+            </if>
+            <if test="repaymentCompoundInterest != null">
+				repayment_compound_interest = #{reapymentCompoundInterest},
+            </if>
+			<if test="repaymentDate != null">
+				repayment_date = #{repaymentDate},
+			</if>
+            <if test="remarks != null">
+			  remarks = #{remarks},
+            </if>
+            <if test="updateBy != null and updateBy.id != null">
+			  update_by = #{updateBy.id},
+            </if>
+            <if test="updateTime != null">
+			  update_time = #{updateTime}
+            </if>
+        </set>
+		WHERE id = #{id}
+	</update>
+
+	<update id="delete">
+		UPDATE t_bldk_repayment_record SET del_flag = TRUE WHERE id = #{id}
+	</update>
+	
+</mapper>
